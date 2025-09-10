@@ -1,6 +1,147 @@
 
 <style>
-    /* ====== Cotizador / Acordeón ====== */
+/* ====== HEADER GENERAL ====== */
+.main-header {
+    background-color: #f5f5f5; /* gris claro elegante */
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ====== LOGO ====== */
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+/* ====== NAV LINKS ====== */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
+    color: #333; /* gris oscuro sobrio */
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #7a7a7a; /* gris medio elegante */
+}
+
+/* ====== MENU RESPONSIVO ====== */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #f5f5f5;
+        flex-direction: column;
+        gap: 1rem;
+        width: 200px;
+        padding: 1rem;
+        border-left: 1px solid #ddd;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+/* ====== FOOTER ====== */
+.main-footer {
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding: 2rem 1rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo p {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #7a7a7a;
+}
+
+.footer-contact p {
+    margin: 0.3rem 0;
+    color: #555;
+    font-size: 0.85rem;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+/* ====== Cotizador / Acordeón ====== */
 .cotizador { 
   max-width: 1200px; margin: 2rem auto; padding: 0 1rem; 
   font-family: 'Helvetica Neue', Arial, sans-serif; color: #333;
@@ -56,7 +197,26 @@ select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radiu
 
 /* Helpers paleta */
 .badge { font-size:.8rem; color:#666; }
+
 </style>
+
+<header class="main-header">
+    <div class="container">
+        <a href="/" class="logo">
+            <img src="https://www.save-free.com/cdn/https://instagram.fyei6-2.fna.fbcdn.net/v/t51.2885-19/449330308_988220206074313_5583631523304772596_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fyei6-2.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QFDAMhjRwsnfXfKikh_pwcxV3XDcefiXYaeBl2xP6WdaLDuvCYgh6DP-g9EQnlc0fQ&_nc_ohc=yL_nSsRri98Q7kNvwG-I4kg&_nc_gid=eNIt5kaCBgiQvfr-F0p2hg&edm=AEF8tYYBAAAA&ccb=7-5&oh=00_Afb9KDJ7hZ1wa0rN7kuDj7Z2F_WQwk9SSIaLwlXBmsmngA&oe=68C7BE78&_nc_sid=1e20d2" alt="Los Ríos Constructora">
+        </a>
+        <nav class="nav-links">
+            <a href="#">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Proyectos</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+    </div>
+</header>
+
 <section class="cotizador">
   <h2>Configura tu proyecto</h2>
 
@@ -123,6 +283,27 @@ select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radiu
     </div>
   </details>
 </section>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="https://www.save-free.com/cdn/https://instagram.fyei6-2.fna.fbcdn.net/v/t51.2885-19/449330308_988220206074313_5583631523304772596_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fyei6-2.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QFDAMhjRwsnfXfKikh_pwcxV3XDcefiXYaeBl2xP6WdaLDuvCYgh6DP-g9EQnlc0fQ&_nc_ohc=yL_nSsRri98Q7kNvwG-I4kg&_nc_gid=eNIt5kaCBgiQvfr-F0p2hg&edm=AEF8tYYBAAAA&ccb=7-5&oh=00_Afb9KDJ7hZ1wa0rN7kuDj7Z2F_WQwk9SSIaLwlXBmsmngA&oe=68C7BE78&_nc_sid=1e20d2" alt="Los Ríos Constructora">
+            <p>Constructora Los Ríos © {{ year }}</p>
+        </div>
+        
+        <div class="footer-links">
+            <a href="#">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Proyectos</a>
+            <a href="#">Contacto</a>
+        </div>
+        
+        <div class="footer-contact">
+            <p><strong>Teléfono:</strong> +56 9 1234 5678</p>
+            <p><strong>Email:</strong> contacto@losrios.cl</p>
+        </div>
+    </div>
+</footer>
 
 <script>
     // Dataset DEMO (puedes reemplazarlo por JSON desde Django)
