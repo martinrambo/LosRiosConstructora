@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tecnomarket</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}">
+</head>
+<body>
+<header class="main-header">
+    <div class="container">
+        <a href="/" class="logo">
+            <img src="{% static 'app/img/LogoLosRios.jpg' %}" alt="Los Ríos Constructora">
+        </a>
+        <nav class="nav-links">
+            <a href="#">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Proyectos</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+    </div>
+</header>
+
+<div id="contenido">
+    {% block contenido %}
+
+    {% endblock %}
+   
+</div>
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="{% static 'app/img/LogoLosRios.jpg' %}" alt="Los Ríos Constructora">
+            <p>Constructora Los Ríos © {{ year }}</p>
+        </div>
+        
+        <div class="footer-links">
+            <a href="#">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Proyectos</a>
+            <a href="#">Contacto</a>
+        </div>
+        
+        <div class="footer-contact">
+            <p><strong>Teléfono:</strong> +56 9 1234 5678</p>
+            <p><strong>Email:</strong> contacto@losrios.cl</p>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'app/js/menu.js' %}"></script>
+
+
+</body>
+</html>

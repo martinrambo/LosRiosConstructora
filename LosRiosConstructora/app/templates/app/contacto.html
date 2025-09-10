@@ -1,0 +1,78 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+    <section class="cotizador">
+  <h2>Configura tu proyecto</h2>
+
+  <!-- Ítem 1: Ventanas -->
+  <details class="acc-item" open>
+    <summary>Ventanas</summary>
+
+    <div class="acc-grid">
+      <form id="form-ventanas" class="form-grid" autocomplete="off">
+        <!-- Tipo de sistema -->
+        <div class="field">
+          <label class="label">Tipo de ventana</label>
+          <div class="options" id="opt-sistema">
+            <!-- radios generados por JS -->
+          </div>
+        </div>
+
+        <!-- Tipo de vidrio -->
+        <div class="field">
+          <label class="label">Tipo de vidrio</label>
+          <select id="sel-vidrio">
+            <option value="">Selecciona…</option>
+            <option value="Monolítico">Monolítico</option>
+            <option value="Termopanel">Termopanel (DVH)</option>
+            <option value="Laminado">Laminado</option>
+          </select>
+        </div>
+
+        <!-- Tamaño -->
+        <div class="field">
+          <label class="label">Medida</label>
+          <select id="sel-medida">
+            <option value="">Selecciona…</option>
+            <option value="140x120">140×120 cm</option>
+            <option value="120x100">120×100 cm</option>
+            <option value="100x100">100×100 cm</option>
+          </select>
+        </div>
+
+        <!-- Marca -->
+        <div class="field">
+          <label class="label">Marca</label>
+          <select id="sel-marca">
+            <option value="">Selecciona…</option>
+            <option value="WINTEC">WINTEC</option>
+            <option value="Altron">Altron</option>
+            <option value="GENÉRICA">Genérica</option>
+          </select>
+        </div>
+      </form>
+
+      <!-- Preview -->
+      <aside class="preview" id="preview-ventana">
+        <div class="preview-img">
+          <img id="preview-img" src="{% static 'app/img/VentanaEjemplo.jpg' %}" alt="Ventana seleccionada">
+        </div>
+        <div class="preview-info">
+          <h3 id="preview-title">Selecciona una opción</h3>
+          <p id="preview-desc">Aquí verás el detalle de la ventana elegida.</p>
+          <p class="precio" id="preview-price">—</p>
+          <button type="button" class="btn-add" id="btn-add-ventana">Agregar al pedido</button>
+        </div>
+      </aside>
+    </div>
+  </details>
+</section>
+
+
+    <script src="{% static 'app/js/cotizador.js' %}"></script>
+
+
+{% endblock %}
