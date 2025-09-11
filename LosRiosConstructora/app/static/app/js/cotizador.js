@@ -125,3 +125,6 @@ function updatePreview(){
 function clp(n){ 
   return new Intl.NumberFormat('es-CL', { style:'currency', currency:'CLP', maximumFractionDigits:0 }).format(n);
 }
+
+
+

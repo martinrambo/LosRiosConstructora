@@ -217,9 +217,79 @@ select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radiu
     </div>
 </header>
 
-<section class="cotizador">
+  <section class="cotizador">
   <h2>Configura tu proyecto</h2>
 
+  <!-- Ítem 1: Ventanas -->
+  <!-- RADIER -->
+  <details class="acc-item" open>
+
+    <summary>Radier</summary>
+
+    <div class="acc-grid">
+      <form id="radier-form" class="form-grid" autocomplete="off">
+        <div class="field">
+          <label class="label flex-between">
+            <span>Solera perimetral</span>
+            <button type="button" id="btn-solera-help" class="help-btn" hidden>Ayuda</button>
+          </label>
+
+           <select id="radier-sel-solera">
+            
+            <option value="">Selecciona…</option>
+            
+            <option value="madera_2x4">Madera pino 2"x4" (moldaje)</option>
+            <option value="madera_2x5">Madera pino 2"x5" (moldaje)</option>
+            <option value="madera_2x6">Madera pino 2"x6" (moldaje / radier más alto)</option>
+            <option value="madera_impregnada">Madera impregnada (mayor durabilidad)</option>
+            <option value="hormigon_simple">Solera de hormigón simple (permanente)</option>
+            <option value="hormigon_armado">Solera de hormigón armado (permanente)</option>
+            <option value="prefabricada_hormigon">Solera prefabricada de hormigón</option>
+            <option value="metalcon_canal_90">Perfil canal Metalcon 90 (guía perimetral)</option>
+            <option value="perfil_galvanizado">Perfil metálico galvanizado (ángulo/U)</option>
+            <option value="sin_solera">Sin solera (radier a ras con corte perimetral)</option>
+          </select>
+          
+        </div>
+      </form>
+
+      <!-- <aside class="preview" id="radier-preview">
+        <div class="preview-img">
+          <img id="radier-preview-img" src="{% static 'app/img/placeholder_window.png' %}" alt="Vista referencia">
+        </div>
+        <div class="preview-info">
+          <h3 id="radier-preview-title">Selecciona una solera</h3>
+          <p id="radier-preview-desc">Se mostrará una explicación breve aquí.</p>
+        </div>
+      </aside> -->
+    </div>
+  </details>
+  
+  <!-- Modal (contenido de ayuda va aquí; por defecto oculto) -->
+  <div id="modal-solera" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__card" role="document">
+      <header class="modal__header">
+        <h3>¿Qué solera necesito?</h3>
+        <button class="modal__close" title="Cerrar" data-close>×</button>
+      </header>
+      <div class="modal__body">
+        <ul class="help-list">
+          <li><strong>Madera 2"x4" / 2"x5" / 2"x6"</strong> — Moldaje temporal para dar altura al radier. Se retira al fraguar.</li>
+          <li><strong>Madera impregnada</strong> — Moldaje más resistente a intemperie/humedad.</li>
+          <li><strong>Hormigón simple</strong> — Solera permanente cuando no se cargarán muros pesados.</li>
+          <li><strong>Hormigón armado</strong> — Permanente + acero; recomendado si arriba irán muros/tabiques.</li>
+          <li><strong>Prefabricada hormigón</strong> — Piezas prontas; montaje rápido.</li>
+          <li><strong>Canal Metalcon 90</strong> — Guía perimetral para sistemas livianos.</li>
+          <li><strong>Perfil galvanizado</strong> — Alternativa metálica (ángulo/U) en zonas de alto desgaste.</li>
+          <li><strong>Sin solera</strong> — Radier a ras; requiere corte/perfilado perimetral prolijo.</li>
+        </ul>
+        <p class="tip">Tip: si arriba irán <em>muros</em>, prefiere <strong>hormigón armado</strong>. Para patios/bodegas livianas, el <strong>moldaje de madera</strong> es suficiente.</p>
+      </div>
+    </div>
+  </div>
+
+  <br>
   <!-- Ítem 1: Ventanas -->
   <details class="acc-item" open>
     <summary>Ventanas</summary>
@@ -282,7 +352,10 @@ select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radiu
       </aside>
     </div>
   </details>
+
+
 </section>
+
 
 <footer class="main-footer">
     <div class="footer-container">
