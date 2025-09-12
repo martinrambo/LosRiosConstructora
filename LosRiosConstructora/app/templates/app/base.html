@@ -7,6 +7,8 @@
     <title>Tecnomarket</title>
 
     {% load static %}
+    {% block css %}
+    {% endblock %}
     <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}">
 </head>
 <body>
@@ -55,6 +57,12 @@
 </footer>
 
 <script src="{% static 'app/js/menu.js' %}"></script>
+
+{% block js %}
+
+
+{% endblock %}
+
 
 
 </body>
