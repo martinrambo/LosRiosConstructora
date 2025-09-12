@@ -51,4 +51,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Conecta cada trío select-botón-modal
   wireHelp('tipo-radier',   'help-radier',   'modal-radier');
   wireHelp('tipo-hormigon', 'help-hormigon', 'modal-hormigon');
+  wireHelp('tipo-dosificacion', 'help-dosi', 'modal-dosificacion');
 });

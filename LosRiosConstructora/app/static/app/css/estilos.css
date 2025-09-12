@@ -250,3 +250,10 @@ select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radiu
   text-decoration: none;
   cursor: pointer;
 }
+
+
+.field .label.flex-between{
+  display: flex;
+  align-items: center;
+  gap: 8px;        /* espacio entre texto y botón ? */
+}
