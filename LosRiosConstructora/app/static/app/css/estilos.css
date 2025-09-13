@@ -257,3 +257,43 @@ select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radiu
   align-items: center;
   gap: 8px;        /* espacio entre texto y botón ? */
 }
+
+
+
+
+
+/* Wizard core */
+.wiz-viewport{ overflow:hidden; position:relative; }
+.wiz-track{ display:flex; transition:transform .4s ease; }
+.step{ min-width:100%; padding:1rem 0; }
+
+/* Progreso */
+.wiz-progress{ margin-bottom:.75rem; }
+.wiz-progress-bar{ height:6px; background:#eee; border-radius:999px; overflow:hidden; }
+#wiz-progress-fill{ display:block; height:100%; width:0%; background:#222; transition:width .3s ease; }
+.wiz-steps{ display:flex; gap:1rem; margin:.5rem 0 0; padding:0; list-style:none; font-size:.85rem; color:#777; }
+.wiz-steps li.active{ color:#222; font-weight:600; }
+
+/* Navegación */
+.wiz-nav{ display:flex; justify-content:flex-end; gap:.5rem; margin-top:1rem; }
+.btn{ padding:.6rem .9rem; border:1px solid #ccc; border-radius:10px; background:#f5f5f5; cursor:pointer; }
+.btn-dark{ background:#222; color:#fff; border-color:#222; }
+.btn:disabled{ opacity:.5; cursor:not-allowed; }
+
+/* Alinear título + botón ayuda */
+.field .label.flex-between{ display:flex; align-items:center; gap:8px; }
+
+
+/* fila para select + botón de ayuda */
+.control-inline{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+}
+.control-inline select{
+  flex:1;           /* el select ocupa todo el ancho disponible */
+}
+.control-inline .help-btn{
+  display:none;     /* como ya lo tienes */
+  margin-left:0;    /* por si tenías margen previo */
+}

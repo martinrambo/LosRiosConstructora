@@ -7,317 +7,295 @@
 <section class="cotizador">
   <h2>Configura tu proyecto</h2>
 
-  <!-- Ítem 1: Ventanas -->
-  <!-- RADIER -->
-  <details class="acc-item" open>
+  <!-- ===== Wizard: Progreso ===== -->
+  <div class="wiz-progress" aria-label="Progreso">
+    <div class="wiz-progress-bar"><span id="wiz-progress-fill"></span></div>
+    <ol class="wiz-steps" id="wiz-steps">
+      <li class="active">Emplazamiento</li>
+      <li>Radier</li>
+      <li>Ventanas</li>
+      <li>Resumen</li>
+    </ol>
+  </div>
 
-    <summary>Radier</summary>
+  <!-- ===== Wizard: Viewport/Track ===== -->
+  <div class="wiz-viewport">
+    <div class="wiz-track" id="wiz-track">
 
-    <div class="acc-grid">
-      <form id="radier-form" class="form-grid" autocomplete="off">
-        <div class="field">
-          <!-- Radier -->
-          <label class="label flex-between">
-            <span>Tipo de radier</span>
-            <button id="help-radier" class="help-btn" type="button" aria-label="Ayuda radier">?</button>
-          </label>
+      <!-- ===== PASO 1: Emplazamiento ===== -->
+      <section class="step" data-title="Emplazamiento" id="step-emplazamiento">
+        <details class="acc-item" open>
+          <summary>Emplazamiento</summary>
 
-          <!-- MODAL DE AYUDA -->
-          <!-- MODAL DE AYUDA -->
-         <div class="modal" id="modal-radier">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>¿Qué tipo de radier elegir?</h3>
-            <ul>
-              <li>
-                <strong>Radier normal:</strong> 
-                Base de hormigón tradicional H20, con malla electrosoldada y aislación de polietileno.  
-                Resistente y funcional, recomendado para patios, estacionamientos o bodegas.  
-                <br><em>Opción básica y económica.</em>
-              </li>
-              <br>
-              <li>
-                <strong>Radier con aislación de Aislapol:</strong> 
-                Incluye aislación térmica bajo el hormigón, además de malla electrosoldada.  
-                Reduce la humedad y mejora el confort térmico en espacios habitables.  
-                <br><em>Muy recomendado para viviendas y proyectos que buscan mayor eficiencia energética.</em>
-              </li>
-              <br>
-              <li>
-                <strong>Radier losa radiante:</strong> 
-                Diseñado para integrar sistemas de calefacción en el piso.  
-                Incorpora malla electrosoldada, ofreciendo un ambiente moderno, cálido y uniforme durante todo el año.  
-                <br><em>La solución premium para proyectos de alto estándar.</em>
-              </li>
-            </ul>
-            <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
-              <strong>Consejo:</strong> el radier normal cumple su función en usos básicos.  
-              Si busca mayor confort y eficiencia, la aislación con Aislapol es la opción más equilibrada.  
-              Para proyectos que apuestan por la modernidad y el valor agregado, la losa radiante ofrece la mejor inversión a largo plazo.
-            </p>
-          </div>
-        </div>
-
-
-           <select id="tipo-radier">
+          <div class="acc-grid">
+            <form id="form-emplazamiento" class="form-grid" autocomplete="off">
             
-            <option value="">Selecciona…</option>
+
+              <div class="field">
+                <div class="control-inline"> 
+                  <select id="tipo-emplazamiento" required>
+                    <option value="">Selecciona…</option>
+                    <option value="curvat">Considerar curva del terreno</option>
+                    <option value="maquinariat">Ralizar trabajos de maquinaria</option>
+                    <option value="otros">Otros</option>
+                  </select>
+                  <button id="help-empla" class="help-btn" type="button" aria-label="Ayuda empla">?</button>
+                </div>
+                
+              </div>
+
+      
+            </form>
             
-            <option value="rnormal">Radier normal</option>
-            <option value="raislapol">Radier con aislacion de Aislapol</option>
-            <option value="rradiante">Radier losa radiante</option>
-            <option value="otros">Otros</option>
-          </select>
-        </div>
-
-        
-        <div class="field">
-          <label class="label flex-between">
-            <span>Tipo de hormigón</span>
-            <button id="help-hormigon" class="help-btn" type="button" aria-label="Ayuda hormigón">?</button>
-          </label>
-
-          <div class="modal" id="modal-hormigon">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <h3>¿Qué tipo de hormigón elegir?</h3>
-
-              <ul>
-                <li>
-                  <strong>H10:</strong>
-                  Hormigón de baja resistencia para rellenos y nivelaciones no estructurales.
-                  <br><em>No recomendado para radieres de uso habitual.</em>
-                </li>
-                <br>
-
-                <li>
-                  <strong>H15:</strong>
-                  Uso general en fundaciones menores y soleras no exigidas. Buena trabajabilidad.
-                  <br><em>Alternativa básica cuando las cargas son muy bajas.</em>
-                </li>
-                <br>
-
-                <li>
-                  <strong>H20 (tradicional):</strong>
-                  Opción clásica para radieres livianos y patios. Balance entre costo y desempeño.
-                  <br><em>Funciona, pero ofrece menor margen frente a fisuración o cargas mayores.</em>
-                </li>
-                <br>
-
-                <li>
-                  <strong>H25 / HN25:</strong>
-                  Resistencia superior y mejor desempeño a largo plazo. Ideal para viviendas y radieres con tránsito frecuente.
-                  <br><em>La elección equilibrada: mayor durabilidad con sobrecosto acotado.</em>
-                </li>
-                <br>
-
-                <li>
-                  <strong>H30:</strong>
-                  Alta resistencia para radieres exigentes, garajes y zonas con mayores cargas.
-                  <br><em>Mejor control de fisuras y menor mantenimiento.</em>
-                </li>
-                <br>
-
-                <li>
-                  <strong>Hormigón armado (H25 o H30 + acero):</strong>
-                  Combina resistencia del hormigón con acero de refuerzo. Recomendado cuando se proyectan mayores cargas, losa radiante o se busca un radier más estable en el tiempo.
-                  <br><em>La solución premium para desempeño y valor residual.</em>
-                </li>
-              </ul>
-
-              <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
-                <strong>Recomendación:</strong> para uso básico, H20 cumple. Si buscas durabilidad y menor riesgo de fisuras,
-                <strong>H25/HN25</strong> es el estándar recomendado. Para cargas altas, garajes o un resultado más estable,
-                <strong>H30</strong> o <strong>hormigón armado</strong> entregan el mejor desempeño e inversión a largo plazo.
-              </p>
-            </div>
           </div>
-          <select name="" id="tipo-hormigon">
-            <option value="">Selecciona…</option>
-            <option value="h10">Hormigón H10</option>
-            <option value="h15">Hormigón H15</option>
-            <option value="h20">Hormigón H20</option>
-            <option value="h25">Hormigón H25 / HN25</option>
-            <option value="h30">Hormigón H30</option>
-            <option value="ha">Hormigón armado (H25 o H30 armado)</option>
-            <option value="otros">Otros</option>
+        </details>
+      </section>
 
+      <!-- ===== PASO 2: Radier ===== -->
+      <section class="step" data-title="Radier" id="step-radier">
+        <details class="acc-item" open>
+          <summary>Radier</summary>
 
-          </select>
+          <div class="acc-grid">
+            <form id="radier-form" class="form-grid" autocomplete="off">
 
-        </div>
+              <!-- Tipo de radier -->
+              <div class="field">
+                <label class="label flex-between">
+                  <span>Tipo de radier</span>
+                  <button id="help-radier" class="help-btn" type="button" aria-label="Ayuda radier">?</button>
+                </label>
 
-        <div class="field">
-          <label class="label flex-between">
-            <span>Dosificación</span>
-            <button id="help-dosi" class="help-btn" type="button" aria-label="Ayuda dosificación">?</button>
-          </label>
-          <div class="modal" id="modal-dosificacion">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-               <h3>¿Qué tipo de dosificación (cono) elegir?</h3>
-              <ul>
-                <li>
-                  <strong>Cono 5 cm:</strong> 
-                  Mezcla más rígida, con menor trabajabilidad. Usada en fundaciones o radieres donde se requiere mayor control de asentamiento.  
-                  <br><em>Opción básica, pero más difícil de trabajar.</em>
-                </li>
-                <br>
+                
 
-                <li>
-                  <strong>Cono 7 cm:</strong> 
-                  Equilibrio entre resistencia y facilidad de colocación. Permite un buen acabado en radieres de viviendas o patios.  
-                  <br><em>La elección más común y balanceada.</em>
-                </li>
-                <br>
+                <select id="tipo-radier" required>
+                  <option value="">Selecciona…</option>
+                  <option value="rnormal">Radier normal</option>
+                  <option value="raislapol">Radier con aislación de Aislapol</option>
+                  <option value="rradiante">Radier losa radiante</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
 
-                <li>
-                  <strong>Cono 10 cm:</strong> 
-                  Mezcla más fluida, ideal para radieres con alta densidad de fierros o instalaciones de calefacción radiante.  
-                  <br><em>Facilita la colocación y reduce vacíos: la opción recomendada en proyectos exigentes.</em>
-                </li>
-              </ul>
+              <!-- Tipo de hormigón -->
+              <div class="field">
+                <label class="label flex-between">
+                  <span>Tipo de hormigón</span>
+                  <button id="help-hormigon" class="help-btn" type="button" aria-label="Ayuda hormigón">?</button>
+                </label>
 
-              <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
-                <strong>Recomendación:</strong> el <strong>cono 7 cm</strong> es suficiente para la mayoría de radieres.  
-                Si se busca un acabado superior y mejor compactación, <strong>cono 10 cm</strong> ofrece la mayor seguridad y valor a largo plazo.
-              </p>
-            </div>
+               
+
+                <select id="tipo-hormigon" required>
+                  <option value="">Selecciona…</option>
+                  <option value="h10">H10</option>
+                  <option value="h15">H15</option>
+                  <option value="h20">H20</option>
+                  <option value="h25">H25 / HN25</option>
+                  <option value="h30">H30</option>
+                  <option value="ha">Hormigón armado (H25/H30)</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+
+              <!-- Dosificación (Cono) -->
+              <div class="field">
+                <label class="label flex-between">
+                  <span>Dosificación (Cono de Abrams)</span>
+                  <button id="help-dosi" class="help-btn" type="button" aria-label="Ayuda dosificación">?</button>
+                </label>
+
+               
+
+                <select id="tipo-dosificacion" required>
+                  <option value="">Selecciona…</option>
+                  <option value="cono-5">Cono 5 cm</option>
+                  <option value="cono-7">Cono 7 cm</option>
+                  <option value="cono-10">Cono 10 cm</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+            </form>
           </div>
+        </details>
+      </section>
 
+      <!-- ===== PASO 3: Ventanas ===== -->
+      <section class="step" data-title="Ventanas" id="step-ventanas">
+        <details class="acc-item" open>
+          <summary>Ventanas</summary>
 
+          <div class="acc-grid">
+            <form id="form-ventanas" class="form-grid" autocomplete="off">
+              <div class="field">
+                <label class="label">Tipo de ventana</label>
+                <div class="options" id="opt-sistema_2">
+                  <!-- radios generados por JS si aplica -->
+                </div>
+              </div>
 
-          <select id="tipo-dosificacion">
-            <option value="">Selecciona…</option>
-            <option value="cono-5">Cono 5 cm</option>
-            <option value="cono-7">Cono 7 cm</option>
-            <option value="cono-10">Cono 10 cm</option>
-            <option value="otros">Otros</option>
-          </select>
-        
-      </div>
-      </form>
+              <div class="field">
+                <label class="label">Tipo de vidrio</label>
+                <select id="sel-vidrio_2" required>
+                  <option value="">Selecciona…</option>
+                  <option value="Monolítico">Monolítico</option>
+                  <option value="Termopanel">Termopanel (DVH)</option>
+                  <option value="Laminado">Laminado</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
 
-      <!-- <aside class="preview" id="radier-preview">
-        <div class="preview-img">
-          <img id="radier-preview-img" src="{% static 'app/img/placeholder_window.png' %}" alt="Vista referencia">
-        </div>
-        <div class="preview-info">
-          <h3 id="radier-preview-title">Selecciona una solera</h3>
-          <p id="radier-preview-desc">Se mostrará una explicación breve aquí.</p>
-        </div>
-      </aside> -->
+              <div class="field">
+                <label class="label">Medida</label>
+                <select id="sel-medida_2" required>
+                  <option value="">Selecciona…</option>
+                  <option value="140x120">140×120 cm</option>
+                  <option value="120x100">120×100 cm</option>
+                  <option value="100x100">100×100 cm</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label class="label">Marca</label>
+                <select id="sel-marca_2" required>
+                  <option value="">Selecciona…</option>
+                  <option value="WINTEC">WINTEC</option>
+                  <option value="Altron">Altron</option>
+                  <option value="GENÉRICA">Genérica</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+            </form>
+          </div>
+        </details>
+      </section>
+
+      <!-- ===== PASO 4: Resumen ===== -->
+      <section class="step" data-title="Resumen" id="step-resumen">
+        <h3>Resumen</h3>
+        <div id="wiz-summary">Revisa tus selecciones…</div>
+      </section>
+
     </div>
-  </details>
-  
-  
+  </div>
 
-  <br>
-
-
-
-
-
+  <!-- ===== Navegación Wizard ===== -->
+  <div class="wiz-nav">
+    <button type="button" id="wiz-prev" class="btn" disabled>Anterior</button>
+    <button type="button" id="wiz-next" class="btn btn-dark">Siguiente</button>
+    <button type="button" id="wiz-submit" class="btn btn-dark" hidden>Enviar</button>
+  </div>
 
 
+<div class="modal" id="modal-empla">
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>¿Qué tipo de emplazamiento elegir?</h3>
+    <ul>
+      <li>
+        <strong>Radier normal:</strong>
+        Hormigón H20, malla electrosoldada y aislación de polietileno.
+        <em> Opción básica y económica.</em>
+      </li><br>
+      <li>
+        <strong>Radier con aislación de Aislapol:</strong>
+        Aislación térmica bajo el hormigón + malla electrosoldada.
+        <em> Recomendado para viviendas (mejor confort y eficiencia).</em>
+       </li><br>
+      <li>
+        <strong>Radier losa radiante:</strong>
+        Integra calefacción en piso + malla electrosoldada.
+        <em> Solución premium, estable y moderna.</em>
+      </li>
+    </ul>
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
+      <strong>Consejo:</strong> normal cumple lo básico; con Aislapol equilibra costo/beneficio;
+      losa radiante es la mejor inversión a largo plazo.
+    </p>
+  </div>
+</div>
 
 
 
 
 
 
+<div class="modal" id="modal-radier">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>¿Qué tipo de radier elegir?</h3>
+    <ul>
+      <li>
+        <strong>Radier normal:</strong>
+        Hormigón H20, malla electrosoldada y aislación de polietileno.
+        <em> Opción básica y económica.</em>
+      </li><br>
+      <li>
+        <strong>Radier con aislación de Aislapol:</strong>
+        Aislación térmica bajo el hormigón + malla electrosoldada.
+        <em> Recomendado para viviendas (mejor confort y eficiencia).</em>
+      </li><br>
+      <li>
+        <strong>Radier losa radiante:</strong>
+        Integra calefacción en piso + malla electrosoldada.
+        <em> Solución premium, estable y moderna.</em>
+      </li>
+    </ul>
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
+      <strong>Consejo:</strong> normal cumple lo básico; con Aislapol equilibra costo/beneficio;
+      losa radiante es la mejor inversión a largo plazo.
+    </p>
+  </div>
+</div>
 
+<div class="modal" id="modal-hormigon">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>¿Qué tipo de hormigón elegir?</h3>
+    <ul>
+      <li><strong>H10:</strong> Rellenos/nivelaciones. <em>No para radieres habituales.</em></li><br>
+      <li><strong>H15:</strong> Fundaciones menores. <em>Para cargas muy bajas.</em></li><br>
+      <li><strong>H20:</strong> Opción clásica. <em>Menor margen frente a fisuras.</em></li><br>
+      <li><strong>H25 / HN25:</strong> Estándar vivienda. <em>Mejor durabilidad.</em></li><br>
+      <li><strong>H30:</strong> Cargas altas/garaje. <em>Más control de fisuras.</em></li><br>
+      <li><strong>Armado (H25/H30 + acero):</strong> Máximo desempeño. <em>Premium.</em></li>
+    </ul>
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
+      <strong>Recomendación:</strong> H25/HN25 para vivienda; H30 o armado para exigencias altas.
+    </p>
+  </div>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Ítem 1: Ventanas -->
-  <details class="acc-item" open>
-    <summary>Ventanas</summary>
-
-    <div class="acc-grid">
-      <form id="form-ventanas" class="form-grid" autocomplete="off">
-        <!-- Tipo de sistema -->
-        <div class="field">
-          <label class="label">Tipo de ventana</label>
-          <div class="options" id="opt-sistema">
-            <!-- radios generados por JS -->
-          </div>
-        </div>
-
-        <!-- Tipo de vidrio -->
-        <div class="field">
-          <label class="label">Tipo de vidrio</label>
-          <select id="sel-vidrio">
-            <option value="">Selecciona…</option>
-            <option value="Monolítico">Monolítico</option>
-            <option value="Termopanel">Termopanel (DVH)</option>
-            <option value="Laminado">Laminado</option>
-          </select>
-        </div>
-
-        <!-- Tamaño -->
-        <div class="field">
-          <label class="label">Medida</label>
-          <select id="sel-medida">
-            <option value="">Selecciona…</option>
-            <option value="140x120">140×120 cm</option>
-            <option value="120x100">120×100 cm</option>
-            <option value="100x100">100×100 cm</option>
-          </select>
-        </div>
-
-        <!-- Marca -->
-        <div class="field">
-          <label class="label">Marca</label>
-          <select id="sel-marca">
-            <option value="">Selecciona…</option>
-            <option value="WINTEC">WINTEC</option>
-            <option value="Altron">Altron</option>
-            <option value="GENÉRICA">Genérica</option>
-          </select>
-        </div>
-      </form>
-
-      <!-- Preview -->
-      <aside class="preview" id="preview-ventana">
-        <div class="preview-img">
-          <img id="preview-img" src="{% static 'app/img/VentanaEjemplo.jpg' %}" alt="Ventana seleccionada">
-        </div>
-        <div class="preview-info">
-          <h3 id="preview-title">Selecciona una opción</h3>
-          <p id="preview-desc">Aquí verás el detalle de la ventana elegida.</p>
-          <p class="precio" id="preview-price">—</p>
-          <button type="button" class="btn-add" id="btn-add-ventana">Agregar al pedido</button>
-        </div>
-      </aside>
-    </div>
-  </details>
-
-
+<div class="modal" id="modal-dosificacion">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>¿Qué dosificación (cono) elegir?</h3>
+    <ul>
+      <li><strong>Cono 5 cm:</strong> Rígido, difícil de trabajar. <em>Básico.</em></li><br>
+      <li><strong>Cono 7 cm:</strong> Equilibrado. <em>Usos generales.</em></li><br>
+      <li><strong>Cono 10 cm:</strong> Fluido, ideal con fierros/losa radiante. <em>Premium.</em></li>
+    </ul>
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
+      <strong>Recomendación:</strong> 7 cm funciona para la mayoría; 10 cm facilita colocación y acabado superior.
+    </p>
+  </div>
+</div>
 </section>
+
+
+
 
 
 {% block js %}
 <script src="{% static 'app/js/cotizador.js' %}"></script>
+
+
+<script>
+
+</script>
+
 
 {% endblock %}
 
