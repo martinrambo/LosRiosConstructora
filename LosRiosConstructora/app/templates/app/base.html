@@ -9,7 +9,9 @@
     {% load static %}
     {% block css %}
     {% endblock %}
-    <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}">
+
+    {% now "U" as ts %}
+    <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}?v={{ ts }}">
 </head>
 <body>
 <header class="main-header">

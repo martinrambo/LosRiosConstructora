@@ -10,11 +10,37 @@
   <!-- ===== Wizard: Progreso ===== -->
   <div class="wiz-progress" aria-label="Progreso">
     <div class="wiz-progress-bar"><span id="wiz-progress-fill"></span></div>
-    <ol class="wiz-steps" id="wiz-steps">
-      <li class="active">Emplazamiento</li>
-      <li>Radier</li>
-      <li>Ventanas</li>
-      <li>Resumen</li>
+
+    <ol class="wiz-steps" id="wiz-steps" role="tablist" aria-label="Pasos del cotizador">
+      <li role="presentation">
+        <button type="button" class="step-tab active" data-step="0" aria-controls="step-emplazamiento"
+          aria-selected="true" role="tab">
+          Emplazamiento
+        </button>
+      </li>
+      <li role="presentation">
+        <button type="button" class="step-tab" data-step="1" aria-controls="step-radier" aria-selected="false" role="tab">
+          Radier
+        </button>
+      </li>
+      <li role="presentation">
+        <button type="button" class="step-tab" data-step="2" aria-controls="step-Elevacion" aria-selected="false"
+          role="tab">
+          Elevaciones/Estructura
+        </button>
+      </li>
+      <li role="presentation">
+        <button type="button" class="step-tab" data-step="3" aria-controls="step-ventanas" aria-selected="false"
+          role="tab">
+          Ventanas
+        </button>
+      </li>
+      <li role="presentation">
+        <button type="button" class="step-tab" data-step="4" aria-controls="step-resumen" aria-selected="false"
+          role="tab">
+          Resumen
+        </button>
+      </li>
     </ol>
   </div>
 
@@ -116,6 +142,36 @@
                 </select>
               </div>
             </form>
+          </div>
+        </details>
+      </section>
+      <!-- ===== PASO 3: Elevacion ===== -->
+      <section class="step" data-title="elevacion" id="step-elevacion">
+        <details class="acc-item" open>
+          <summary>Elevaciones / Estructura</summary>
+
+          <div class="acc-grid">
+            <form id="form-elevacion" class="form-grid" autocomplete="off">
+            
+
+              <div class="field">
+                <div class="control-inline"> 
+                  <select id="tipo-elevacion" required>
+                    <option value="">Selecciona…</option>
+                    <option value="Emadera">Madera</option>
+                    <option value="Evulco">Vulcometal</option>
+                    <option value="Esip">Panel SIP</option>
+                    <option value="Esolido">Muro solido</option>
+                    <option value="otros">Otros</option>
+                  </select>
+                  <button id="help-elevacion" class="help-btn" type="button" aria-label="Ayuda Elevacion">?</button>
+                </div>
+                
+              </div>
+
+      
+            </form>
+            
           </div>
         </details>
       </section>
@@ -283,14 +339,54 @@
     </p>
   </div>
 </div>
+
+<div class="modal" id="modal-elevacion">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>¿Qué sistema de elevación/estructura elegir?</h3>
+    <ul>
+      <li>
+        <strong>Madera:</strong><br>
+        Opción clásica, económica y rápida de montar. Ideal para presupuestos ajustados,
+        pero con mayor necesidad de mantención y menor aislamiento acústico/térmico.
+        
+      </li><br>
+      <li>
+        <strong>Vulcometal:</strong><br>
+        Perfilería metálica con placas. Más firme que la madera, liviano y versátil. Buena solución intermedia,
+        aunque menos aislante y menos robusta frente a los años.
+        
+      </li><br>
+      <li>
+        <strong>Panel SIP (Estructura aislada térmica):</strong><br>
+        Tecnología moderna: paneles con aislamiento incorporado. Ahorro energético enorme,
+        montaje rápido, resistencia superior. El confort es inmediato y los gastos de energía
+        bajan durante toda la vida útil.
+        
+      </li><br>
+      <li>
+        <strong>Muro sólido (Hormigón armado, Bloque de Hórmigon o Ladrillo fiscal):</strong><br>
+        La máxima solidez. Muros masivos, resistentes a todo (tiempo, fuego, ruido). 
+        Es la opción de lujo: durabilidad absoluta, mínima mantención, valor de reventa más alto.
+        
+      </li>
+    </ul>
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
+      <strong>Recomendación:</strong> Aunque todas funcionan, <u>Panel SIP</u> y <u>Muro sólido</u>
+      son las opciones que realmente transforman tu casa en una inversión de futuro: 
+      más confort, eficiencia y valorización de la propiedad.  
+      
+    </p>
+  </div>
+</div>
 </section>
 
 
-
+{% now "U" as ts %}
 
 
 {% block js %}
-<script src="{% static 'app/js/cotizador.js' %}"></script>
+<script src="{% static 'app/js/cotizador.js' %}?v={{ ts }}"></script>
 
 
 <script>

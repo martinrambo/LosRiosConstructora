@@ -1,275 +1,286 @@
-/* =========================
-   Branding Los Ríos — Theme
-   (paleta desde el kit)
-   ========================= */
+/* =========================================================
+   BRANDING / THEME — Constructora Los Ríos
+   Paleta y tokens de diseño
+   ========================================================= */
 :root{
-  --lr-ink:        #2E2E2E; /* texto principal */
-  --lr-muted:      #686458; /* texto secundario / bordes */
-  --lr-accent:     #917D64; /* acento principal */
-  --lr-accent-2:   #A7A376; /* acento secundario */
-  --lr-soft:       #EBE0D0; /* fondo suave */
+  /* Colores base */
+  --lr-ink:        #2E2E2E;  /* texto principal */
+  --lr-muted:      #686458;  /* texto secundario / bordes */
+  --lr-accent:     #917D64;  /* acento principal */
+  --lr-accent-2:   #A7A376;  /* acento secundario */
+  --lr-soft:       #EBE0D0;  /* fondo suave */
   --lr-white:      #FFFFFF;
 
-  /* componentes */
-  --lr-bg:         #ffffff;
+  /* Tokens de componentes */
+  --lr-bg:         #FFFFFF;
   --lr-border:     #D9D4CB;
   --lr-focus:      rgba(145,125,100,.45); /* halo de foco */
   --lr-shadow:     0 6px 20px rgba(46,46,46,.08);
 }
 
+/* =========================================================
+   BASE / GLOBAL
+   Tipografía y colores por defecto
+   ========================================================= */
 html, body{
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
                Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   color: var(--lr-ink);
-  background: #fff;
+  background: var(--lr-bg);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ====== HEADER GENERAL ====== */
+/* =========================================================
+   LAYOUT: HEADER
+   ========================================================= */
 .main-header {
-    background-color: #f5f5f5; /* gris claro elegante */
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+  background-color: #f5f5f5;                /* gris claro elegante */
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0.8rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* ====== LOGO ====== */
+/* Logo */
 .logo img {
-    height: 60px;
-    width: auto;
+  height: 60px;
+  width: auto;
 }
 
-/* ====== NAV LINKS ====== */
+/* Navegación header */
 .nav-links {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
-
 .nav-links a {
-    text-decoration: none;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 500;
-    color: #333; /* gris oscuro sobrio */
-    transition: color 0.3s ease;
+  text-decoration: none;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  color: #333;                                /* gris oscuro sobrio */
+  transition: color 0.3s ease;
 }
-
 .nav-links a:hover {
-    color: #7a7a7a; /* gris medio elegante */
+  color: #7a7a7a;                             /* gris medio elegante */
 }
 
-/* ====== MENU RESPONSIVO ====== */
+/* Toggle menú (mobile) */
 .menu-toggle {
-    display: none;
-    font-size: 1.8rem;
-    cursor: pointer;
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: #f5f5f5;
-        flex-direction: column;
-        gap: 1rem;
-        width: 200px;
-        padding: 1rem;
-        border-left: 1px solid #ddd;
-        display: none;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-}
-
-
-/* ====== FOOTER ====== */
+/* =========================================================
+   LAYOUT: FOOTER
+   ========================================================= */
 .main-footer {
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
-    padding: 2rem 1rem;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.9rem;
-    color: #333;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  padding: 2rem 1rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #333;
 }
 
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .footer-logo img {
-    height: 50px;
-    margin-bottom: 0.5rem;
+  height: 50px;
+  margin-bottom: 0.5rem;
 }
 
 .footer-logo p {
-    font-size: 0.85rem;
-    color: #555;
+  font-size: 0.85rem;
+  color: #555;
 }
 
 .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-
 .footer-links a {
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
 }
-
-.footer-links a:hover {
-    color: #7a7a7a;
-}
+.footer-links a:hover { color: #7a7a7a; }
 
 .footer-contact p {
-    margin: 0.3rem 0;
-    color: #555;
-    font-size: 0.85rem;
+  margin: 0.3rem 0;
+  color: #555;
+  font-size: 0.85rem;
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-links {
-        flex-direction: row;
-        gap: 1rem;
-    }
-}
-
-/* ====== Cotizador / Acordeón ====== */
+/* =========================================================
+   COMPONENTE: Cotizador (contenedor principal)
+   ========================================================= */
 .cotizador { 
-  max-width: 1200px; margin: 2rem auto; padding: 0 1rem; 
-  font-family: 'Helvetica Neue', Arial, sans-serif; color: #333;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem; 
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
 }
-.cotizador h2 { font-size: 1.4rem; margin-bottom: 1rem; }
+.cotizador h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
 
+/* =========================================================
+   COMPONENTE: Acordeón (details/summary)
+   ========================================================= */
 .acc-item { 
-  border: 1px solid #ddd; border-radius: 10px; background:#f7f7f7; 
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f7f7f7; 
 }
 .acc-item + .acc-item { margin-top: 1rem; }
 .acc-item > summary {
-  cursor: pointer; list-style: none; padding: 1rem 1.25rem; font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
 }
 .acc-item > summary::-webkit-details-marker { display: none; }
 .acc-item[open] > summary { border-bottom: 1px solid #e5e5e5; }
 
 .acc-grid { 
-  display: grid; gap: 1.25rem; padding: 1.25rem; 
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.25rem; 
   grid-template-columns: 1fr 360px; 
 }
-@media (max-width: 900px){ .acc-grid{ grid-template-columns: 1fr; } }
+@media (max-width: 900px){
+  .acc-grid{ grid-template-columns: 1fr; }
+}
 
-/* ====== Form ====== */
-.form-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0,1fr)); }
-@media (max-width: 600px){ .form-grid{ grid-template-columns: 1fr; } }
-.field .label { display:block; font-size:.9rem; margin-bottom:.4rem; color:#555; }
-select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radius:10px; background:#fff; }
+/* =========================================================
+   FORMULARIOS
+   ========================================================= */
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+}
+@media (max-width: 600px){
+  .form-grid{ grid-template-columns: 1fr; }
+}
 
-.options { display:flex; flex-wrap:wrap; gap:.5rem; }
+.field .label { 
+  display: block;
+  font-size: .9rem;
+  margin-bottom: .4rem;
+  color: #555;
+}
+
+/* Alinear título + botón ayuda */
+.field .label.flex-between{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Selects */
+select {
+  width: 100%;
+  padding: .6rem .7rem;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* Radios estilo pill */
+.options { display: flex; flex-wrap: wrap; gap: .5rem; }
 .radio-chip {
-  position: relative; display:inline-flex; align-items:center; gap:.5rem;
-  padding:.55rem .8rem; border:1px solid #d6d6d6; border-radius:999px; background:#fff;
-  cursor:pointer; transition: all .2s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .55rem .8rem;
+  border: 1px solid #d6d6d6;
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  transition: all .2s ease;
 }
-.radio-chip input { position:absolute; inset:0; opacity:0; cursor:pointer; }
-.radio-chip.active, .radio-chip:hover { border-color:#999; background:#f0f0f0; }
+.radio-chip input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.radio-chip.active,
+.radio-chip:hover {
+  border-color: #999;
+  background: #f0f0f0;
+}
 
-/* ====== Preview ====== */
+/* =========================================================
+   PREVIEW (tarjeta lateral)
+   ========================================================= */
 .preview { 
-  border:1px solid #ddd; border-radius:12px; background:#fff; 
-  display:flex; flex-direction:column; overflow:hidden;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff; 
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
-.preview-img { background:#fafafa; border-bottom:1px solid #eee; display:flex; align-items:center; justify-content:center; min-height:180px; }
-.preview-img img { max-width:100%; max-height:220px; object-fit:contain; }
-.preview-info { padding:1rem; display:grid; gap:.35rem; }
-.preview-info h3 { margin:0; font-size:1.05rem; }
-.preview-info .precio { font-weight:700; font-size:1.1rem; }
+.preview-img {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+.preview-img img {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+.preview-info { padding: 1rem; display: grid; gap: .35rem; }
+.preview-info h3 { margin: 0; font-size: 1.05rem; }
+.preview-info .precio { font-weight: 700; font-size: 1.1rem; }
+
 .btn-add {
-  margin-top:.4rem; padding:.6rem .9rem; border:none; border-radius:10px; cursor:pointer;
-  background:#222; color:#fff; transition:opacity .2s ease;
+  margin-top: .4rem;
+  padding: .6rem .9rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #222;
+  color: #fff;
+  transition: opacity .2s ease;
 }
-.btn-add:hover { opacity:.9; }
+.btn-add:hover { opacity: .9; }
 
-/* Helpers paleta */
-.badge { font-size:.8rem; color:#666; }
+/* Badge helper */
+.badge { font-size: .8rem; color: #666; }
 
-
+/* =========================================================
+   BOTONES DE AYUDA (?)
+   ========================================================= */
 .help-btn {
-  display: none; 
+  display: none;             /* se muestra al interactuar con el select */
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   color: #555;
@@ -285,89 +296,177 @@ select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radiu
   padding: 0;
   margin-left: 8px;
 }
-
 .help-btn:hover {
   background-color: #e0e0e0;
   color: #000;
   border-color: #999;
 }
 
+/* Fila para select + botón ayuda */
+.control-inline{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.control-inline select{ flex: 1; }
+.control-inline .help-btn{
+  display: none;
+  margin-left: 0;
+}
 
-
-
+/* =========================================================
+   MODALES (overlay full screen)
+   * Declarar los .modal fuera del .wiz-track (fixed correcto)
+   ========================================================= */
 .modal{
-  display:none; position:fixed; inset:0;
-  z-index: 2000;                 /* antes tenías 1 */
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
   background: rgba(0,0,0,.4);
 }
 .modal-content{
-  background:#fff; margin:10vh auto; padding:20px;
-  border:1px solid #888; width:80%; border-radius:10px;
+  background: #fff;
+  margin: 10vh auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 980px;
+  border-radius: 10px;
 }
 
-
-
-/* The Close Button */
+/* Botón cerrar modal */
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
   cursor: pointer;
 }
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
 
+/* =========================================================
+   WIZARD (viewport, track, progreso, tabs y navegación)
+   ========================================================= */
 
-.field .label.flex-between{
-  display: flex;
+/* Viewport/Track básicos */
+.wiz-viewport { overflow: hidden; position: relative; }
+.wiz-track    { display: flex; transition: transform .4s ease; width: 100%; will-change: transform; }
+.step         { min-width: 100%; flex: 0 0 100%; padding: 1rem 0; }
+
+/* Progreso (barra + lista de pasos) */
+.wiz-progress      { margin-bottom: .75rem; position: relative; z-index: 1; }
+.wiz-progress-bar  { height: 6px; background: #eee; border-radius: 999px; overflow: hidden; position: relative; z-index: 0; }
+#wiz-progress-fill { display: block; height: 100%; width: 0%; background: #222; transition: width .3s ease; }
+
+/* Lista de pasos (como píldoras con botones .step-tab) */
+.wiz-steps {
+  position: relative; z-index: 2; pointer-events: auto;
+  display: flex; flex-wrap: wrap; gap: .5rem;
+  margin: .5rem 0 0; padding: 0; list-style: none;
+  font-size: .85rem; color: #777;
+}
+.wiz-steps li { margin: 0; padding: 0; }
+.wiz-steps li.active { color: #222; font-weight: 600; }
+
+/* Botones de paso (píldoras) */
+.step-tab {
+  all: unset; /* limpiamos estilos nativos (usamos role/aria en HTML) */
+  display: inline-flex;
   align-items: center;
-  gap: 8px;        /* espacio entre texto y botón ? */
+  gap: .4rem;
+  padding: .45rem .8rem;
+  border: 1px solid var(--lr-border);
+  background: var(--lr-white);
+  color: var(--lr-muted);
+  border-radius: 999px;
+  cursor: pointer;
+  line-height: 1;
+  transition: box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.step-tab:hover {
+  background: #f8f8f8;
+  border-color: #cfcfcf;
+  color: var(--lr-ink);
+}
+.step-tab:focus-visible {
+  outline: 2px solid var(--lr-focus);
+  outline-offset: 2px;
+}
+.step-tab.active,
+.wiz-steps li.active .step-tab {
+  background: var(--lr-ink);
+  border-color: var(--lr-ink);
+  color: #fff;
+  box-shadow: var(--lr-shadow);
 }
 
-
-
-
-
-/* Wizard core */
-.wiz-viewport{ overflow:hidden; position:relative; }
-.wiz-track{ display:flex; transition:transform .4s ease; }
-.step{ min-width:100%; padding:1rem 0; }
-
-/* Progreso */
-.wiz-progress{ margin-bottom:.75rem; }
-.wiz-progress-bar{ height:6px; background:#eee; border-radius:999px; overflow:hidden; }
-#wiz-progress-fill{ display:block; height:100%; width:0%; background:#222; transition:width .3s ease; }
-.wiz-steps{ display:flex; gap:1rem; margin:.5rem 0 0; padding:0; list-style:none; font-size:.85rem; color:#777; }
-.wiz-steps li.active{ color:#222; font-weight:600; }
-
-/* Navegación */
-.wiz-nav{ display:flex; justify-content:flex-end; gap:.5rem; margin-top:1rem; }
-.btn{ padding:.6rem .9rem; border:1px solid #ccc; border-radius:10px; background:#f5f5f5; cursor:pointer; }
-.btn-dark{ background:#222; color:#fff; border-color:#222; }
-.btn:disabled{ opacity:.5; cursor:not-allowed; }
-
-/* Alinear título + botón ayuda */
-.field .label.flex-between{ display:flex; align-items:center; gap:8px; }
-
-
-/* fila para select + botón de ayuda */
-.control-inline{
-  display:flex;
-  align-items:center;
-  gap:.5rem;
+/* Navegación inferior */
+.wiz-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: .5rem;
+  margin-top: 1rem;
 }
-.control-inline select{
-  flex:1;           /* el select ocupa todo el ancho disponible */
+.btn{
+  padding: .6rem .9rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f5f5f5;
+  cursor: pointer;
 }
-.control-inline .help-btn{
-  display:none;     /* como ya lo tienes */
-  margin-left:0;    /* por si tenías margen previo */
+.btn-dark{ background: #222; color: #fff; border-color: #222; }
+.btn:disabled{ opacity: .5; cursor: not-allowed; }
+
+/* =========================================================
+   UTILIDADES Y ACCESIBILIDAD
+   ========================================================= */
+/* Foco accesible en items clicables extra (por si se navega con Tab) */
+.wiz-steps li { outline: none; }
+.wiz-steps li:focus-visible {
+  outline: 2px solid var(--lr-focus);
+  border-radius: 6px;
 }
 
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* Header responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #f5f5f5;
+    flex-direction: column;
+    gap: 1rem;
+    width: 200px;
+    padding: 1rem;
+    border-left: 1px solid #ddd;
+    display: none;
+  }
+  .nav-links.active { display: flex; }
+  .menu-toggle { display: block; }
+}
+
+/* Footer responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links { flex-direction: row; gap: 1rem; }
+}
+
+/* Tabs wizard responsive */
+@media (max-width: 640px){
+  .step-tab { padding: .4rem .65rem; font-size: .9rem; }
+}
 
 

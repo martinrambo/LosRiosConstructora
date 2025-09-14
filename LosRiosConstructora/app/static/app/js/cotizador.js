@@ -1,15 +1,19 @@
+// =====================
+// Modales de ayuda
+// =====================
 document.addEventListener('DOMContentLoaded', () => {
-
   function wireHelp(selectId, btnId, modalId){
     const select = document.getElementById(selectId);
     const btn    = document.getElementById(btnId);
     const modal  = document.getElementById(modalId);
+    if (!select || !btn || !modal) return; // defensivo por si falta algo
     const close  = modal.querySelector('.close');
 
     // Mostrar el botón al interactuar con este select
     select.addEventListener('click', () => {
       btn.style.display = 'inline-block';
     });
+
     // Ocultar el botón si se hace click en otro select
     document.querySelectorAll('select').forEach(s => {
       if (s !== select) {
@@ -26,10 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Cerrar modal (X)
-    close.addEventListener('click', () => {
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden','true');
-    });
+    if (close){
+      close.addEventListener('click', () => {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden','true');
+      });
+    }
 
     // Cerrar si clic en overlay
     modal.addEventListener('click', (e) => {
@@ -49,27 +55,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Conecta cada trío select-botón-modal
-  wireHelp('tipo-radier',   'help-radier',   'modal-radier');
-  wireHelp('tipo-hormigon', 'help-hormigon', 'modal-hormigon');
-  wireHelp('tipo-dosificacion', 'help-dosi', 'modal-dosificacion');
-  wireHelp('tipo-emplazamiento', 'help-empla', 'modal-empla');
+  wireHelp('tipo-radier',         'help-radier',   'modal-radier');
+  wireHelp('tipo-hormigon',       'help-hormigon', 'modal-hormigon');
+  wireHelp('tipo-dosificacion',   'help-dosi',     'modal-dosificacion');
+  wireHelp('tipo-emplazamiento',  'help-empla',    'modal-empla');
+  wireHelp('tipo-elevacion',  'help-elevacion',    'modal-elevacion');
 });
 
 
+// =====================
+// Wizard (navegación + validación)
+// =====================
 (() => {
-  const track = document.getElementById('wiz-track');
-  const steps = Array.from(track.querySelectorAll('.step'));
-  const prev  = document.getElementById('wiz-prev');
-  const next  = document.getElementById('wiz-next');
-  const submit= document.getElementById('wiz-submit');
-  const fill  = document.getElementById('wiz-progress-fill');
-  const ol    = document.getElementById('wiz-steps');
-  let i = 0;
+  const track  = document.getElementById('wiz-track');
+  const steps  = Array.from(track.querySelectorAll('.step'));
+  const prev   = document.getElementById('wiz-prev');
+  const next   = document.getElementById('wiz-next');
+  const submit = document.getElementById('wiz-submit');
+  const fill   = document.getElementById('wiz-progress-fill');
+  const ol     = document.getElementById('wiz-steps');
 
-  // Sincroniza títulos por si cambias data-title
-  if (ol && ol.children.length !== steps.length) {
-    ol.innerHTML = steps.map(s => `<li>${s.dataset.title||'Paso'}</li>`).join('');
-  }
+  // Tabs (botones)
+  let tabs = Array.from(ol.querySelectorAll('.step-tab'));
+  // Defensa: si faltan tabs o no coinciden con steps, las reindexamos (sin tocar el HTML visible)
+  tabs.forEach((btn, idx) => {
+    btn.dataset.step = String(idx);
+    const stepId = steps[idx]?.id || '';
+    if (stepId) btn.setAttribute('aria-controls', stepId);
+  });
+
+  let i = 0;
 
   function updateUI(){
     track.style.transform = `translateX(-${i*100}%)`;
@@ -80,13 +95,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const pct = Math.round((i)/(steps.length-1)*100);
     fill.style.width = `${pct}%`;
 
-    ol.querySelectorAll('li').forEach((li,idx)=>{
+    // Estado visual (li activo) y accesibilidad (aria-selected en botón)
+    Array.from(ol.children).forEach((li, idx)=>{
       li.classList.toggle('active', idx<=i);
     });
+    tabs.forEach((btn, idx)=>{
+      btn.classList.toggle('active', idx===i);
+      btn.setAttribute('aria-selected', idx===i ? 'true' : 'false');
+    });
+
+    // Actualiza hash para deep-linking
+    if (steps[i]?.id) {
+      history.replaceState(null, '', `#${steps[i].id}`);
+    }
 
     if (i===steps.length-1) buildSummary();
   }
 
+  // Valida SOLO el paso "idx"
   function validateStep(idx){
     const required = steps[idx].querySelectorAll('select[required], input[required]');
     for (const el of required){
@@ -95,14 +121,34 @@ document.addEventListener('DOMContentLoaded', () => {
     return true;
   }
 
+  // Valida TODOS y retorna el primero inválido, o -1 si todo OK
+  function firstInvalidStep(){
+    for (let k=0; k<steps.length; k++){
+      if (!validateStep(k)) return k;
+    }
+    return -1;
+  }
+
+  // Navega a "idx"; si requireValid, exige validación del paso actual al avanzar
+  function goTo(idx, { requireValid = false } = {}){
+    idx = Math.max(0, Math.min(steps.length-1, idx));
+    const goingForward = idx > i;
+    if (requireValid && goingForward) {
+      if (!validateStep(i)) return;
+    }
+    i = idx;
+    updateUI();
+  }
+
+  // Construye resumen con campos claves
   function buildSummary(){
     const map = [
+      ['tipo-emplazamiento','Emplazamiento'],
       ['tipo-radier','Tipo de radier'],
       ['tipo-hormigon','Hormigón'],
       ['tipo-dosificacion','Dosificación (cono)'],
-      ['sel-vidrio','Vidrio (Paso 1)'],
-      ['sel-medida','Medida (Paso 1)'],
-      ['sel-marca','Marca (Paso 1)'],
+      ['tipo-Elevacion','Elevaciones/Estructura'],
+      // Ventanas
       ['sel-vidrio_2','Vidrio (Ventanas)'],
       ['sel-medida_2','Medida (Ventanas)'],
       ['sel-marca_2','Marca (Ventanas)']
@@ -119,58 +165,41 @@ document.addEventListener('DOMContentLoaded', () => {
     if (container) container.innerHTML = out.join('');
   }
 
-  prev.addEventListener('click', () => { i=Math.max(0,i-1); updateUI(); });
-  next.addEventListener('click', () => { if(!validateStep(i)) return; i=Math.min(steps.length-1,i+1); updateUI(); });
+  // Botones Anterior/Siguiente/Enviar
+  prev.addEventListener('click', () => goTo(i-1, { requireValid: false }));
+  next.addEventListener('click', () => goTo(i+1, { requireValid: true  }));
+
   submit.addEventListener('click', () => {
-    if(!validateStep(i)) return;
-    // TODO: aquí haces submit real (fetch/POST) o navegas a confirmación
+    const bad = firstInvalidStep();
+    if (bad !== -1) {
+      goTo(bad, { requireValid: false });
+      alert('Faltan datos obligatorios en este paso.');
+      return;
+    }
     alert('Formulario listo para enviar');
+    // TODO: aquí haces el POST real si corresponde
   });
 
-  // Navegación teclado
-  document.addEventListener('keydown', (e)=>{
-    if (e.key==='ArrowRight') next.click();
-    if (e.key==='ArrowLeft')  prev.click();
+  // Clic en la barra de pasos (delegación a .step-tab)
+  ol.addEventListener('click', (e) => {
+    const btn = e.target.closest('.step-tab');
+    if (!btn) return;
+    const idx = parseInt(btn.dataset.step, 10);
+    goTo(idx, { requireValid: false });
   });
+
+  // Navegación teclado global (flechas)
+  document.addEventListener('keydown', (e)=>{
+    if (e.key==='ArrowRight') goTo(i+1, { requireValid: true  });
+    if (e.key==='ArrowLeft')  goTo(i-1, { requireValid: false });
+  });
+
+  // Deep-link inicial por hash (ej: #step-radier)
+  const hash = location.hash.slice(1);
+  if (hash) {
+    const idx = steps.findIndex(s => s.id === hash);
+    if (idx >= 0) i = idx;
+  }
 
   updateUI();
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,206 +1,288 @@
 
 <style>
-/* ====== HEADER GENERAL ====== */
+/* =========================================================
+   BRANDING / THEME — Constructora Los Ríos
+   Paleta y tokens de diseño
+   ========================================================= */
+:root{
+  /* Colores base */
+  --lr-ink:        #2E2E2E;  /* texto principal */
+  --lr-muted:      #686458;  /* texto secundario / bordes */
+  --lr-accent:     #917D64;  /* acento principal */
+  --lr-accent-2:   #A7A376;  /* acento secundario */
+  --lr-soft:       #EBE0D0;  /* fondo suave */
+  --lr-white:      #FFFFFF;
+
+  /* Tokens de componentes */
+  --lr-bg:         #FFFFFF;
+  --lr-border:     #D9D4CB;
+  --lr-focus:      rgba(145,125,100,.45); /* halo de foco */
+  --lr-shadow:     0 6px 20px rgba(46,46,46,.08);
+}
+
+/* =========================================================
+   BASE / GLOBAL
+   Tipografía y colores por defecto
+   ========================================================= */
+html, body{
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: var(--lr-ink);
+  background: var(--lr-bg);
+}
+
+/* =========================================================
+   LAYOUT: HEADER
+   ========================================================= */
 .main-header {
-    background-color: #f5f5f5; /* gris claro elegante */
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+  background-color: #f5f5f5;                /* gris claro elegante */
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0.8rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* ====== LOGO ====== */
+/* Logo */
 .logo img {
-    height: 60px;
-    width: auto;
+  height: 60px;
+  width: auto;
 }
 
-/* ====== NAV LINKS ====== */
+/* Navegación header */
 .nav-links {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
-
 .nav-links a {
-    text-decoration: none;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 500;
-    color: #333; /* gris oscuro sobrio */
-    transition: color 0.3s ease;
+  text-decoration: none;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  color: #333;                                /* gris oscuro sobrio */
+  transition: color 0.3s ease;
 }
-
 .nav-links a:hover {
-    color: #7a7a7a; /* gris medio elegante */
+  color: #7a7a7a;                             /* gris medio elegante */
 }
 
-/* ====== MENU RESPONSIVO ====== */
+/* Toggle menú (mobile) */
 .menu-toggle {
-    display: none;
-    font-size: 1.8rem;
-    cursor: pointer;
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: #f5f5f5;
-        flex-direction: column;
-        gap: 1rem;
-        width: 200px;
-        padding: 1rem;
-        border-left: 1px solid #ddd;
-        display: none;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-}
-
-
-/* ====== FOOTER ====== */
+/* =========================================================
+   LAYOUT: FOOTER
+   ========================================================= */
 .main-footer {
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
-    padding: 2rem 1rem;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.9rem;
-    color: #333;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  padding: 2rem 1rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #333;
 }
 
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .footer-logo img {
-    height: 50px;
-    margin-bottom: 0.5rem;
+  height: 50px;
+  margin-bottom: 0.5rem;
 }
 
 .footer-logo p {
-    font-size: 0.85rem;
-    color: #555;
+  font-size: 0.85rem;
+  color: #555;
 }
 
 .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-
 .footer-links a {
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
 }
-
-.footer-links a:hover {
-    color: #7a7a7a;
-}
+.footer-links a:hover { color: #7a7a7a; }
 
 .footer-contact p {
-    margin: 0.3rem 0;
-    color: #555;
-    font-size: 0.85rem;
+  margin: 0.3rem 0;
+  color: #555;
+  font-size: 0.85rem;
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-links {
-        flex-direction: row;
-        gap: 1rem;
-    }
-}
-
-/* ====== Cotizador / Acordeón ====== */
+/* =========================================================
+   COMPONENTE: Cotizador (contenedor principal)
+   ========================================================= */
 .cotizador { 
-  max-width: 1200px; margin: 2rem auto; padding: 0 1rem; 
-  font-family: 'Helvetica Neue', Arial, sans-serif; color: #333;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem; 
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
 }
-.cotizador h2 { font-size: 1.4rem; margin-bottom: 1rem; }
+.cotizador h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
 
+/* =========================================================
+   COMPONENTE: Acordeón (details/summary)
+   ========================================================= */
 .acc-item { 
-  border: 1px solid #ddd; border-radius: 10px; background:#f7f7f7; 
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f7f7f7; 
 }
 .acc-item + .acc-item { margin-top: 1rem; }
 .acc-item > summary {
-  cursor: pointer; list-style: none; padding: 1rem 1.25rem; font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
 }
 .acc-item > summary::-webkit-details-marker { display: none; }
 .acc-item[open] > summary { border-bottom: 1px solid #e5e5e5; }
 
 .acc-grid { 
-  display: grid; gap: 1.25rem; padding: 1.25rem; 
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.25rem; 
   grid-template-columns: 1fr 360px; 
 }
-@media (max-width: 900px){ .acc-grid{ grid-template-columns: 1fr; } }
+@media (max-width: 900px){
+  .acc-grid{ grid-template-columns: 1fr; }
+}
 
-/* ====== Form ====== */
-.form-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0,1fr)); }
-@media (max-width: 600px){ .form-grid{ grid-template-columns: 1fr; } }
-.field .label { display:block; font-size:.9rem; margin-bottom:.4rem; color:#555; }
-select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radius:10px; background:#fff; }
+/* =========================================================
+   FORMULARIOS
+   ========================================================= */
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+}
+@media (max-width: 600px){
+  .form-grid{ grid-template-columns: 1fr; }
+}
 
-.options { display:flex; flex-wrap:wrap; gap:.5rem; }
+.field .label { 
+  display: block;
+  font-size: .9rem;
+  margin-bottom: .4rem;
+  color: #555;
+}
+
+/* Alinear título + botón ayuda */
+.field .label.flex-between{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Selects */
+select {
+  width: 100%;
+  padding: .6rem .7rem;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* Radios estilo pill */
+.options { display: flex; flex-wrap: wrap; gap: .5rem; }
 .radio-chip {
-  position: relative; display:inline-flex; align-items:center; gap:.5rem;
-  padding:.55rem .8rem; border:1px solid #d6d6d6; border-radius:999px; background:#fff;
-  cursor:pointer; transition: all .2s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .55rem .8rem;
+  border: 1px solid #d6d6d6;
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  transition: all .2s ease;
 }
-.radio-chip input { position:absolute; inset:0; opacity:0; cursor:pointer; }
-.radio-chip.active, .radio-chip:hover { border-color:#999; background:#f0f0f0; }
+.radio-chip input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.radio-chip.active,
+.radio-chip:hover {
+  border-color: #999;
+  background: #f0f0f0;
+}
 
-/* ====== Preview ====== */
+/* =========================================================
+   PREVIEW (tarjeta lateral)
+   ========================================================= */
 .preview { 
-  border:1px solid #ddd; border-radius:12px; background:#fff; 
-  display:flex; flex-direction:column; overflow:hidden;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff; 
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
-.preview-img { background:#fafafa; border-bottom:1px solid #eee; display:flex; align-items:center; justify-content:center; min-height:180px; }
-.preview-img img { max-width:100%; max-height:220px; object-fit:contain; }
-.preview-info { padding:1rem; display:grid; gap:.35rem; }
-.preview-info h3 { margin:0; font-size:1.05rem; }
-.preview-info .precio { font-weight:700; font-size:1.1rem; }
+.preview-img {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+.preview-img img {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+.preview-info { padding: 1rem; display: grid; gap: .35rem; }
+.preview-info h3 { margin: 0; font-size: 1.05rem; }
+.preview-info .precio { font-weight: 700; font-size: 1.1rem; }
+
 .btn-add {
-  margin-top:.4rem; padding:.6rem .9rem; border:none; border-radius:10px; cursor:pointer;
-  background:#222; color:#fff; transition:opacity .2s ease;
+  margin-top: .4rem;
+  padding: .6rem .9rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #222;
+  color: #fff;
+  transition: opacity .2s ease;
 }
-.btn-add:hover { opacity:.9; }
+.btn-add:hover { opacity: .9; }
 
-/* Helpers paleta */
-.badge { font-size:.8rem; color:#666; }
+/* Badge helper */
+.badge { font-size: .8rem; color: #666; }
 
-
+/* =========================================================
+   BOTONES DE AYUDA (?)
+   ========================================================= */
 .help-btn {
-  display: none; 
+  display: none;             /* se muestra al interactuar con el select */
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   color: #555;
@@ -216,89 +298,180 @@ select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radiu
   padding: 0;
   margin-left: 8px;
 }
-
 .help-btn:hover {
   background-color: #e0e0e0;
   color: #000;
   border-color: #999;
 }
 
+/* Fila para select + botón ayuda */
+.control-inline{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.control-inline select{ flex: 1; }
+.control-inline .help-btn{
+  display: none;
+  margin-left: 0;
+}
 
-
-
+/* =========================================================
+   MODALES (overlay full screen)
+   * Declarar los .modal fuera del .wiz-track (fixed correcto)
+   ========================================================= */
 .modal{
-  display:none; position:fixed; inset:0;
-  z-index: 2000;                 /* antes tenías 1 */
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
   background: rgba(0,0,0,.4);
 }
 .modal-content{
-  background:#fff; margin:10vh auto; padding:20px;
-  border:1px solid #888; width:80%; border-radius:10px;
+  background: #fff;
+  margin: 10vh auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 980px;
+  border-radius: 10px;
 }
 
-
-
-/* The Close Button */
+/* Botón cerrar modal */
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
   cursor: pointer;
 }
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
 
+/* =========================================================
+   WIZARD (viewport, track, progreso, tabs y navegación)
+   ========================================================= */
 
-.field .label.flex-between{
-  display: flex;
+/* Viewport/Track básicos */
+.wiz-viewport { overflow: hidden; position: relative; }
+.wiz-track    { display: flex; transition: transform .4s ease; width: 100%; will-change: transform; }
+.step         { min-width: 100%; flex: 0 0 100%; padding: 1rem 0; }
+
+/* Progreso (barra + lista de pasos) */
+.wiz-progress      { margin-bottom: .75rem; position: relative; z-index: 1; }
+.wiz-progress-bar  { height: 6px; background: #eee; border-radius: 999px; overflow: hidden; position: relative; z-index: 0; }
+#wiz-progress-fill { display: block; height: 100%; width: 0%; background: #222; transition: width .3s ease; }
+
+/* Lista de pasos (como píldoras con botones .step-tab) */
+.wiz-steps {
+  position: relative; z-index: 2; pointer-events: auto;
+  display: flex; flex-wrap: wrap; gap: .5rem;
+  margin: .5rem 0 0; padding: 0; list-style: none;
+  font-size: .85rem; color: #777;
+}
+.wiz-steps li { margin: 0; padding: 0; }
+.wiz-steps li.active { color: #222; font-weight: 600; }
+
+/* Botones de paso (píldoras) */
+.step-tab {
+  all: unset; /* limpiamos estilos nativos (usamos role/aria en HTML) */
+  display: inline-flex;
   align-items: center;
-  gap: 8px;        /* espacio entre texto y botón ? */
+  gap: .4rem;
+  padding: .45rem .8rem;
+  border: 1px solid var(--lr-border);
+  background: var(--lr-white);
+  color: var(--lr-muted);
+  border-radius: 999px;
+  cursor: pointer;
+  line-height: 1;
+  transition: box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.step-tab:hover {
+  background: #f8f8f8;
+  border-color: #cfcfcf;
+  color: var(--lr-ink);
+}
+.step-tab:focus-visible {
+  outline: 2px solid var(--lr-focus);
+  outline-offset: 2px;
+}
+.step-tab.active,
+.wiz-steps li.active .step-tab {
+  background: var(--lr-ink);
+  border-color: var(--lr-ink);
+  color: #fff;
+  box-shadow: var(--lr-shadow);
+}
+
+/* Navegación inferior */
+.wiz-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+.btn{
+  padding: .6rem .9rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+.btn-dark{ background: #222; color: #fff; border-color: #222; }
+.btn:disabled{ opacity: .5; cursor: not-allowed; }
+
+/* =========================================================
+   UTILIDADES Y ACCESIBILIDAD
+   ========================================================= */
+/* Foco accesible en items clicables extra (por si se navega con Tab) */
+.wiz-steps li { outline: none; }
+.wiz-steps li:focus-visible {
+  outline: 2px solid var(--lr-focus);
+  border-radius: 6px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* Header responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #f5f5f5;
+    flex-direction: column;
+    gap: 1rem;
+    width: 200px;
+    padding: 1rem;
+    border-left: 1px solid #ddd;
+    display: none;
+  }
+  .nav-links.active { display: flex; }
+  .menu-toggle { display: block; }
+}
+
+/* Footer responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links { flex-direction: row; gap: 1rem; }
+}
+
+/* Tabs wizard responsive */
+@media (max-width: 640px){
+  .step-tab { padding: .4rem .65rem; font-size: .9rem; }
 }
 
 
-
-
-
-/* Wizard core */
-.wiz-viewport{ overflow:hidden; position:relative; }
-.wiz-track{ display:flex; transition:transform .4s ease; }
-.step{ min-width:100%; padding:1rem 0; }
-
-/* Progreso */
-.wiz-progress{ margin-bottom:.75rem; }
-.wiz-progress-bar{ height:6px; background:#eee; border-radius:999px; overflow:hidden; }
-#wiz-progress-fill{ display:block; height:100%; width:0%; background:#222; transition:width .3s ease; }
-.wiz-steps{ display:flex; gap:1rem; margin:.5rem 0 0; padding:0; list-style:none; font-size:.85rem; color:#777; }
-.wiz-steps li.active{ color:#222; font-weight:600; }
-
-/* Navegación */
-.wiz-nav{ display:flex; justify-content:flex-end; gap:.5rem; margin-top:1rem; }
-.btn{ padding:.6rem .9rem; border:1px solid #ccc; border-radius:10px; background:#f5f5f5; cursor:pointer; }
-.btn-dark{ background:#222; color:#fff; border-color:#222; }
-.btn:disabled{ opacity:.5; cursor:not-allowed; }
-
-/* Alinear título + botón ayuda */
-.field .label.flex-between{ display:flex; align-items:center; gap:8px; }
-
-
-/* fila para select + botón de ayuda */
-.control-inline{
-  display:flex;
-  align-items:center;
-  gap:.5rem;
-}
-.control-inline select{
-  flex:1;           /* el select ocupa todo el ancho disponible */
-}
-.control-inline .help-btn{
-  display:none;     /* como ya lo tienes */
-  margin-left:0;    /* por si tenías margen previo */
-}
 
 </style>
 
@@ -325,11 +498,37 @@ select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radiu
   <!-- ===== Wizard: Progreso ===== -->
   <div class="wiz-progress" aria-label="Progreso">
     <div class="wiz-progress-bar"><span id="wiz-progress-fill"></span></div>
-    <ol class="wiz-steps" id="wiz-steps">
-      <li class="active">Emplazamiento</li>
-      <li>Radier</li>
-      <li>Ventanas</li>
-      <li>Resumen</li>
+
+    <ol class="wiz-steps" id="wiz-steps" role="tablist" aria-label="Pasos del cotizador">
+      <li role="presentation">
+        <button type="button" class="step-tab active" data-step="0" aria-controls="step-emplazamiento"
+          aria-selected="true" role="tab">
+          Emplazamiento
+        </button>
+      </li>
+      <li role="presentation">
+        <button type="button" class="step-tab" data-step="1" aria-controls="step-radier" aria-selected="false" role="tab">
+          Radier
+        </button>
+      </li>
+      <li role="presentation">
+        <button type="button" class="step-tab" data-step="2" aria-controls="step-Elevacion" aria-selected="false"
+          role="tab">
+          Elevaciones/Estructura
+        </button>
+      </li>
+      <li role="presentation">
+        <button type="button" class="step-tab" data-step="3" aria-controls="step-ventanas" aria-selected="false"
+          role="tab">
+          Ventanas
+        </button>
+      </li>
+      <li role="presentation">
+        <button type="button" class="step-tab" data-step="4" aria-controls="step-resumen" aria-selected="false"
+          role="tab">
+          Resumen
+        </button>
+      </li>
     </ol>
   </div>
 
@@ -431,6 +630,36 @@ select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radiu
                 </select>
               </div>
             </form>
+          </div>
+        </details>
+      </section>
+      <!-- ===== PASO 3: Elevacion ===== -->
+      <section class="step" data-title="elevacion" id="step-elevacion">
+        <details class="acc-item" open>
+          <summary>Elevaciones / Estructura</summary>
+
+          <div class="acc-grid">
+            <form id="form-elevacion" class="form-grid" autocomplete="off">
+            
+
+              <div class="field">
+                <div class="control-inline"> 
+                  <select id="tipo-elevacion" required>
+                    <option value="">Selecciona…</option>
+                    <option value="Emadera">Madera</option>
+                    <option value="Evulco">Vulcometal</option>
+                    <option value="Esip">Panel SIP</option>
+                    <option value="Esolido">Muro solido</option>
+                    <option value="otros">Otros</option>
+                  </select>
+                  <button id="help-elevacion" class="help-btn" type="button" aria-label="Ayuda Elevacion">?</button>
+                </div>
+                
+              </div>
+
+      
+            </form>
+            
           </div>
         </details>
       </section>
@@ -598,8 +827,47 @@ select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radiu
     </p>
   </div>
 </div>
-</section>
 
+<div class="modal" id="modal-elevacion">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>¿Qué sistema de elevación/estructura elegir?</h3>
+    <ul>
+      <li>
+        <strong>Madera:</strong><br>
+        Opción clásica, económica y rápida de montar. Ideal para presupuestos ajustados,
+        pero con mayor necesidad de mantención y menor aislamiento acústico/térmico.
+        
+      </li><br>
+      <li>
+        <strong>Vulcometal:</strong><br>
+        Perfilería metálica con placas. Más firme que la madera, liviano y versátil. Buena solución intermedia,
+        aunque menos aislante y menos robusta frente a los años.
+        
+      </li><br>
+      <li>
+        <strong>Panel SIP (Estructura aislada térmica):</strong><br>
+        Tecnología moderna: paneles con aislamiento incorporado. Ahorro energético enorme,
+        montaje rápido, resistencia superior. El confort es inmediato y los gastos de energía
+        bajan durante toda la vida útil.
+        
+      </li><br>
+      <li>
+        <strong>Muro sólido (Hormigón armado, Bloque de Hórmigon o Ladrillo fiscal):</strong><br>
+        La máxima solidez. Muros masivos, resistentes a todo (tiempo, fuego, ruido). 
+        Es la opción de lujo: durabilidad absoluta, mínima mantención, valor de reventa más alto.
+        
+      </li>
+    </ul>
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
+      <strong>Recomendación:</strong> Aunque todas funcionan, <u>Panel SIP</u> y <u>Muro sólido</u>
+      son las opciones que realmente transforman tu casa en una inversión de futuro: 
+      más confort, eficiencia y valorización de la propiedad.  
+      
+    </p>
+  </div>
+</div>
+</section>
 
 
 <footer class="main-footer">
@@ -624,18 +892,22 @@ select { width:100%; padding:.6rem .7rem; border:1px solid #d6d6d6; border-radiu
 </footer>
 
 <script>
+// =====================
+// Modales de ayuda
+// =====================
 document.addEventListener('DOMContentLoaded', () => {
-
   function wireHelp(selectId, btnId, modalId){
     const select = document.getElementById(selectId);
     const btn    = document.getElementById(btnId);
     const modal  = document.getElementById(modalId);
+    if (!select || !btn || !modal) return; // defensivo por si falta algo
     const close  = modal.querySelector('.close');
 
     // Mostrar el botón al interactuar con este select
     select.addEventListener('click', () => {
       btn.style.display = 'inline-block';
     });
+
     // Ocultar el botón si se hace click en otro select
     document.querySelectorAll('select').forEach(s => {
       if (s !== select) {
@@ -652,10 +924,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Cerrar modal (X)
-    close.addEventListener('click', () => {
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden','true');
-    });
+    if (close){
+      close.addEventListener('click', () => {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden','true');
+      });
+    }
 
     // Cerrar si clic en overlay
     modal.addEventListener('click', (e) => {
@@ -675,27 +949,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Conecta cada trío select-botón-modal
-  wireHelp('tipo-radier',   'help-radier',   'modal-radier');
-  wireHelp('tipo-hormigon', 'help-hormigon', 'modal-hormigon');
-  wireHelp('tipo-dosificacion', 'help-dosi', 'modal-dosificacion');
-  wireHelp('tipo-emplazamiento', 'help-empla', 'modal-empla');
+  wireHelp('tipo-radier',         'help-radier',   'modal-radier');
+  wireHelp('tipo-hormigon',       'help-hormigon', 'modal-hormigon');
+  wireHelp('tipo-dosificacion',   'help-dosi',     'modal-dosificacion');
+  wireHelp('tipo-emplazamiento',  'help-empla',    'modal-empla');
+  wireHelp('tipo-elevacion',  'help-elevacion',    'modal-elevacion');
 });
 
 
+// =====================
+// Wizard (navegación + validación)
+// =====================
 (() => {
-  const track = document.getElementById('wiz-track');
-  const steps = Array.from(track.querySelectorAll('.step'));
-  const prev  = document.getElementById('wiz-prev');
-  const next  = document.getElementById('wiz-next');
-  const submit= document.getElementById('wiz-submit');
-  const fill  = document.getElementById('wiz-progress-fill');
-  const ol    = document.getElementById('wiz-steps');
-  let i = 0;
+  const track  = document.getElementById('wiz-track');
+  const steps  = Array.from(track.querySelectorAll('.step'));
+  const prev   = document.getElementById('wiz-prev');
+  const next   = document.getElementById('wiz-next');
+  const submit = document.getElementById('wiz-submit');
+  const fill   = document.getElementById('wiz-progress-fill');
+  const ol     = document.getElementById('wiz-steps');
 
-  // Sincroniza títulos por si cambias data-title
-  if (ol && ol.children.length !== steps.length) {
-    ol.innerHTML = steps.map(s => `<li>${s.dataset.title||'Paso'}</li>`).join('');
-  }
+  // Tabs (botones)
+  let tabs = Array.from(ol.querySelectorAll('.step-tab'));
+  // Defensa: si faltan tabs o no coinciden con steps, las reindexamos (sin tocar el HTML visible)
+  tabs.forEach((btn, idx) => {
+    btn.dataset.step = String(idx);
+    const stepId = steps[idx]?.id || '';
+    if (stepId) btn.setAttribute('aria-controls', stepId);
+  });
+
+  let i = 0;
 
   function updateUI(){
     track.style.transform = `translateX(-${i*100}%)`;
@@ -706,13 +989,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const pct = Math.round((i)/(steps.length-1)*100);
     fill.style.width = `${pct}%`;
 
-    ol.querySelectorAll('li').forEach((li,idx)=>{
+    // Estado visual (li activo) y accesibilidad (aria-selected en botón)
+    Array.from(ol.children).forEach((li, idx)=>{
       li.classList.toggle('active', idx<=i);
     });
+    tabs.forEach((btn, idx)=>{
+      btn.classList.toggle('active', idx===i);
+      btn.setAttribute('aria-selected', idx===i ? 'true' : 'false');
+    });
+
+    // Actualiza hash para deep-linking
+    if (steps[i]?.id) {
+      history.replaceState(null, '', `#${steps[i].id}`);
+    }
 
     if (i===steps.length-1) buildSummary();
   }
 
+  // Valida SOLO el paso "idx"
   function validateStep(idx){
     const required = steps[idx].querySelectorAll('select[required], input[required]');
     for (const el of required){
@@ -721,14 +1015,34 @@ document.addEventListener('DOMContentLoaded', () => {
     return true;
   }
 
+  // Valida TODOS y retorna el primero inválido, o -1 si todo OK
+  function firstInvalidStep(){
+    for (let k=0; k<steps.length; k++){
+      if (!validateStep(k)) return k;
+    }
+    return -1;
+  }
+
+  // Navega a "idx"; si requireValid, exige validación del paso actual al avanzar
+  function goTo(idx, { requireValid = false } = {}){
+    idx = Math.max(0, Math.min(steps.length-1, idx));
+    const goingForward = idx > i;
+    if (requireValid && goingForward) {
+      if (!validateStep(i)) return;
+    }
+    i = idx;
+    updateUI();
+  }
+
+  // Construye resumen con campos claves
   function buildSummary(){
     const map = [
+      ['tipo-emplazamiento','Emplazamiento'],
       ['tipo-radier','Tipo de radier'],
       ['tipo-hormigon','Hormigón'],
       ['tipo-dosificacion','Dosificación (cono)'],
-      ['sel-vidrio','Vidrio (Paso 1)'],
-      ['sel-medida','Medida (Paso 1)'],
-      ['sel-marca','Marca (Paso 1)'],
+      ['tipo-Elevacion','Elevaciones/Estructura'],
+      // Ventanas
       ['sel-vidrio_2','Vidrio (Ventanas)'],
       ['sel-medida_2','Medida (Ventanas)'],
       ['sel-marca_2','Marca (Ventanas)']
@@ -745,22 +1059,45 @@ document.addEventListener('DOMContentLoaded', () => {
     if (container) container.innerHTML = out.join('');
   }
 
-  prev.addEventListener('click', () => { i=Math.max(0,i-1); updateUI(); });
-  next.addEventListener('click', () => { if(!validateStep(i)) return; i=Math.min(steps.length-1,i+1); updateUI(); });
+  // Botones Anterior/Siguiente/Enviar
+  prev.addEventListener('click', () => goTo(i-1, { requireValid: false }));
+  next.addEventListener('click', () => goTo(i+1, { requireValid: true  }));
+
   submit.addEventListener('click', () => {
-    if(!validateStep(i)) return;
-    // TODO: aquí haces submit real (fetch/POST) o navegas a confirmación
+    const bad = firstInvalidStep();
+    if (bad !== -1) {
+      goTo(bad, { requireValid: false });
+      alert('Faltan datos obligatorios en este paso.');
+      return;
+    }
     alert('Formulario listo para enviar');
+    // TODO: aquí haces el POST real si corresponde
   });
 
-  // Navegación teclado
-  document.addEventListener('keydown', (e)=>{
-    if (e.key==='ArrowRight') next.click();
-    if (e.key==='ArrowLeft')  prev.click();
+  // Clic en la barra de pasos (delegación a .step-tab)
+  ol.addEventListener('click', (e) => {
+    const btn = e.target.closest('.step-tab');
+    if (!btn) return;
+    const idx = parseInt(btn.dataset.step, 10);
+    goTo(idx, { requireValid: false });
   });
+
+  // Navegación teclado global (flechas)
+  document.addEventListener('keydown', (e)=>{
+    if (e.key==='ArrowRight') goTo(i+1, { requireValid: true  });
+    if (e.key==='ArrowLeft')  goTo(i-1, { requireValid: false });
+  });
+
+  // Deep-link inicial por hash (ej: #step-radier)
+  const hash = location.hash.slice(1);
+  if (hash) {
+    const idx = steps.findIndex(s => s.id === hash);
+    if (idx >= 0) i = idx;
+  }
 
   updateUI();
 })();
+
 
 
 
