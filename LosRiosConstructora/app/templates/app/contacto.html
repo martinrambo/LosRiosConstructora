@@ -155,7 +155,12 @@
             
 
               <div class="field">
+                <label class="label flex-between">
+                  <span>Tipo de Elevacion</span>
+                 </label> 
                 <div class="control-inline"> 
+                 
+                  
                   <select id="tipo-elevacion" required>
                     <option value="">Selecciona…</option>
                     <option value="Emadera">Madera</option>
@@ -168,6 +173,89 @@
                 </div>
                 
               </div>
+              <div class="field" id="wrap-madera" style="display:none;">
+                <label class="label">Tipo de madera</label>
+                <select id="tipo-madera" required>
+                  <option value="">Selecciona…</option>
+                  <option value="3pnormal">2x3 en pino normal</option>
+                  <option value="4pnormal">2x4 en pino normal</option>
+                  <option value="3impreg">2x3 en pino impregnado</option>
+                  <option value="4impreg">2x4 en pino impregnado</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+              <!-- Tipo de Vulcometal -->
+              <div class="field" id="wrap-vulco" style="display:none;">
+                <label class="label">Tipo de Vulcometal</label>
+                <select id="tipo-vulco" required>
+                  <option value="">Selecciona…</option>
+                  <option value="C60x38x0.50_3m">C 60 x 38 x 0,50 mm - 3 m</option>
+                  <option value="C60x38x0.85_6m">C 60 x 38 x 0,85 mm - 6 m</option>
+                  <option value="C90x38x0.85_6m">C 90 x 38 x 0,85 mm (2x4) - 6 m</option>
+                  <option value="C100x40x0.85_6m">C 100 x 40 x 0,85 mm - 6 m</option>
+                  <option value="C150x40x0.85_6m">C 150 x 40 x 0,85 mm - 6 m</option>
+              
+                  <!-- Perfiles U (Canales) -->
+                  <option value="U30x25x0.85_6m">U 30 x 25 x 0,85 mm - 6 m</option>
+                  <option value="U42x25x0.85_6m">U 42 x 25 x 0,85 mm - 6 m</option>
+                  <option value="U62x20x0.85_6m">U 62 x 20 x 0,85 mm - 6 m</option>
+                  <option value="U92x25x0.85_6m">U 92 x 25 x 0,85 mm - 6 m</option>
+                  <option value="U103x25x0.85_6m">U 103 x 25 x 0,85 mm - 6 m</option>
+                  <option value="U153x25x0.85_6m">U 153 x 25 x 0,85 mm - 6 m</option>
+              
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+              <!-- Tipo de SIP -->
+              <div class="field" id="wrap-sip" style="display:none;">
+                <label class="label">Tipo de SIP</label>
+                <select id="tipo-sip" required>
+                  <option value="">Selecciona…</option>
+                  <option value="SIP63mm">SIP 63 mm (OSB 11,1 mm + EPS 40 mm + OSB 11,1 mm)</option>
+                  <option value="SIP69mm">SIP 69 mm (OSB 11,1 mm + EPS 46 mm + OSB 11,1 mm)</option>
+                  <option value="SIP72mm">SIP 72 mm (OSB 11,1 mm + EPS 50 mm + OSB 11,1 mm)</option>
+              
+                  <!-- Paneles estándar muros -->
+                  <option value="SIP87mm">SIP 87 mm (OSB 11,1 mm + EPS 65 mm + OSB 11,1 mm)</option>
+                  <option value="SIP92mm">SIP 92 mm (OSB 11,1 mm + EPS 70 mm + OSB 11,1 mm)</option>
+                  <option value="SIP100mm">SIP 100 mm (OSB 11,1 mm + EPS 78 mm + OSB 11,1 mm)</option>
+                  <option value="SIP108mm">SIP 108 mm (OSB 11,1 mm + EPS 86 mm + OSB 11,1 mm)</option>
+                  <option value="SIP111mm">SIP 111 mm (OSB 11,1 mm + EPS 89 mm + OSB 11,1 mm)</option>
+                  <option value="SIP114mm">SIP 114 mm (OSB 11,1 mm + EPS 92 mm + OSB 11,1 mm)</option>
+              
+                  <!-- Paneles reforzados/exteriores -->
+                  <option value="SIP116mm">SIP 116 mm (OSB 11,1 mm + EPS 94 mm + OSB 11,1 mm)</option>
+                  <option value="SIP124mm">SIP 124 mm (OSB 11,1 mm + EPS 102 mm + OSB 11,1 mm)</option>
+                  <option value="SIP140mm">SIP 140 mm (OSB 11,1 mm + EPS 118 mm + OSB 11,1 mm)</option>
+                  <option value="SIP160mm">SIP 160 mm (OSB 11,1 mm + EPS 138 mm + OSB 11,1 mm)</option>
+                  <option value="SIP162mm">SIP 162 mm (OSB 11,1 mm + EPS 140 mm + OSB 11,1 mm)</option>
+              
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+              <!-- Tipo de Muro -->
+              <div class="field" id="wrap-muro" style="display:none;">
+                <label class="label">Tipo de muro</label>
+                <select id="tipo-muro" required>
+                  <option value="">Selecciona…</option>
+                  <option value="bloque">Bloque de hormigón</option>
+                  <option value="ladrillo">Ladrillo</option>
+                  <option value="hormarmado">Hormigón armado</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+              <!-- Tipo de Ladrillo -->
+              <div class="field" id="wrap-ladrillo" style="display:none;">
+                <label class="label">Tipo de ladrillo</label>
+                <select id="tipo-ladrillo" required>
+                  <option value="">Selecciona…</option>
+                  <option value="Lfiscal">Ladrillo Fiscal</option>
+                  <option value="Lprincesa">Ladrillo Fiscal Princesa</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+
+
 
       
             </form>
@@ -353,9 +441,11 @@
       </li><br>
       <li>
         <strong>Vulcometal:</strong><br>
-        Perfilería metálica con placas. Más firme que la madera, liviano y versátil. Buena solución intermedia,
-        aunque menos aislante y menos robusta frente a los años.
-        
+        Perfilería de acero galvanizado liviano que actúa como esqueleto firme y preciso. 
+        No se deforma ni se pudre, es rápido de montar y muy compatible con distintos revestimientos. 
+        Una alternativa práctica y confiable, aunque con menor aislación y calidez natural que la madera, 
+        y menos robusto que un SIP o un muro sólido.
+              
       </li><br>
       <li>
         <strong>Panel SIP (Estructura aislada térmica):</strong><br>
@@ -365,7 +455,7 @@
         
       </li><br>
       <li>
-        <strong>Muro sólido (Hormigón armado, Bloque de Hórmigon o Ladrillo fiscal):</strong><br>
+        <strong>Muro sólido (Hormigón armado, Bloque de Hórmigon o Ladrillo):</strong><br>
         La máxima solidez. Muros masivos, resistentes a todo (tiempo, fuego, ruido). 
         Es la opción de lujo: durabilidad absoluta, mínima mantención, valor de reventa más alto.
         

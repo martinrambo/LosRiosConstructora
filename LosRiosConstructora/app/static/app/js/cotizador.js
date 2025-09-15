@@ -203,3 +203,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateUI();
 })();
+
+
+// ====== Dependencias Elevación ======
+const tipoElevacion = document.getElementById("tipo-elevacion");
+const selMadera     = document.getElementById("tipo-madera");
+const selVulco      = document.getElementById("tipo-vulco");
+const selSip        = document.getElementById("tipo-sip");
+const selMuro       = document.getElementById("tipo-muro");
+const selLadrillo   = document.getElementById("tipo-ladrillo");
+
+const wrapMadera   = document.getElementById("wrap-madera");
+const wrapVulco    = document.getElementById("wrap-vulco");
+const wrapSip      = document.getElementById("wrap-sip");
+const wrapMuro     = document.getElementById("wrap-muro");
+const wrapLadrillo = document.getElementById("wrap-ladrillo");
+
+// helpers: mostrar/ocultar WRAPPERS
+function showWrap(wrap) {
+  if (!wrap) return;
+  wrap.style.display = "block";
+  const s = wrap.querySelector("select");
+  if (s) { s.required = true; s.disabled = false; }
+}
+function hideWrap(wrap) {
+  if (!wrap) return;
+  wrap.style.display = "none";
+  const s = wrap.querySelector("select");
+  if (s) { s.required = false; s.disabled = true; s.value = ""; }
+}
+function hideAll() {
+  [wrapMadera, wrapVulco, wrapSip, wrapMuro, wrapLadrillo].forEach(hideWrap);
+}
+
+// cambio principal
+tipoElevacion.addEventListener("change", function () {
+  hideAll();
+  if (this.value === "Emadera") {
+    showWrap(wrapMadera);
+  } else if (this.value === "Evulco") {
+    showWrap(wrapVulco);
+  } else if (this.value === "Esip") {
+    showWrap(wrapSip);
+  } else if (this.value === "Esolido") {
+    showWrap(wrapMuro);
+    hideWrap(wrapLadrillo); // por si venía abierto
+  }
+});
+
+// subdependencia: ladrillo dentro de muro
+selMuro.addEventListener("change", function () {
+  if (this.value === "ladrillo") {
+    showWrap(wrapLadrillo);
+  } else {
+    hideWrap(wrapLadrillo);
+  }
+});
+
+// estado inicial (por si hay valores precargados)
+tipoElevacion.dispatchEvent(new Event("change"));
+
+
+
