@@ -661,86 +661,103 @@ select {
                 </div>
                 
               </div>
-              <div class="field" id="wrap-madera" style="display:none;">
+              
+
+              <div class="field" id="wrap-madera" style="display:none; " >
                 <label class="label">Tipo de madera</label>
-                <select id="tipo-madera" required>
-                  <option value="">Selecciona…</option>
-                  <option value="3pnormal">2x3 en pino normal</option>
-                  <option value="4pnormal">2x4 en pino normal</option>
-                  <option value="3impreg">2x3 en pino impregnado</option>
-                  <option value="4impreg">2x4 en pino impregnado</option>
-                  <option value="otros">Otros</option>
-                </select>
+                <div class="control-inline">
+                  <select id="tipo-madera" required>
+                    <option value="">Selecciona…</option>
+                    <option value="3pnormal">2x3 en pino normal</option>
+                    <option value="4pnormal">2x4 en pino normal</option>
+                    <option value="3impreg">2x3 en pino impregnado</option>
+                    <option value="4impreg">2x4 en pino impregnado</option>
+                    <option value="otros">Otros</option>
+                  </select>
+                  <button id="help-madera" class="help-btn" type="button" aria-label="Ayuda madera">?</button>
+                </div>
               </div>
               <!-- Tipo de Vulcometal -->
               <div class="field" id="wrap-vulco" style="display:none;">
                 <label class="label">Tipo de Vulcometal</label>
-                <select id="tipo-vulco" required>
-                  <option value="">Selecciona…</option>
-                  <option value="C60x38x0.50_3m">C 60 x 38 x 0,50 mm - 3 m</option>
-                  <option value="C60x38x0.85_6m">C 60 x 38 x 0,85 mm - 6 m</option>
-                  <option value="C90x38x0.85_6m">C 90 x 38 x 0,85 mm (2x4) - 6 m</option>
-                  <option value="C100x40x0.85_6m">C 100 x 40 x 0,85 mm - 6 m</option>
-                  <option value="C150x40x0.85_6m">C 150 x 40 x 0,85 mm - 6 m</option>
-              
-                  <!-- Perfiles U (Canales) -->
-                  <option value="U30x25x0.85_6m">U 30 x 25 x 0,85 mm - 6 m</option>
-                  <option value="U42x25x0.85_6m">U 42 x 25 x 0,85 mm - 6 m</option>
-                  <option value="U62x20x0.85_6m">U 62 x 20 x 0,85 mm - 6 m</option>
-                  <option value="U92x25x0.85_6m">U 92 x 25 x 0,85 mm - 6 m</option>
-                  <option value="U103x25x0.85_6m">U 103 x 25 x 0,85 mm - 6 m</option>
-                  <option value="U153x25x0.85_6m">U 153 x 25 x 0,85 mm - 6 m</option>
-              
-                  <option value="otros">Otros</option>
-                </select>
+                <div class="control-inline">
+                  <select id="tipo-vulco" required>
+                    <option value="">Selecciona…</option>
+                    <option value="C60x38x0.50_3m">C 60 x 38 x 0,50 mm - 3 m</option>
+                    <option value="C60x38x0.85_6m">C 60 x 38 x 0,85 mm - 6 m</option>
+                    <option value="C90x38x0.85_6m">C 90 x 38 x 0,85 mm (2x4) - 6 m</option>
+                    <option value="C100x40x0.85_6m">C 100 x 40 x 0,85 mm - 6 m</option>
+                    <option value="C150x40x0.85_6m">C 150 x 40 x 0,85 mm - 6 m</option>
+                
+                    <!-- Perfiles U (Canales) -->
+                    <option value="U30x25x0.85_6m">U 30 x 25 x 0,85 mm - 6 m</option>
+                    <option value="U42x25x0.85_6m">U 42 x 25 x 0,85 mm - 6 m</option>
+                    <option value="U62x20x0.85_6m">U 62 x 20 x 0,85 mm - 6 m</option>
+                    <option value="U92x25x0.85_6m">U 92 x 25 x 0,85 mm - 6 m</option>
+                    <option value="U103x25x0.85_6m">U 103 x 25 x 0,85 mm - 6 m</option>
+                    <option value="U153x25x0.85_6m">U 153 x 25 x 0,85 mm - 6 m</option>
+                
+                    <option value="otros">Otros</option>
+                  </select>
+                  <button id="help-vulcometal" class="help-btn" type="button" aria-label="Ayuda vulcometal">?</button>
+                </div>
               </div>
               <!-- Tipo de SIP -->
               <div class="field" id="wrap-sip" style="display:none;">
                 <label class="label">Tipo de SIP</label>
-                <select id="tipo-sip" required>
-                  <option value="">Selecciona…</option>
-                  <option value="SIP63mm">SIP 63 mm (OSB 11,1 mm + EPS 40 mm + OSB 11,1 mm)</option>
-                  <option value="SIP69mm">SIP 69 mm (OSB 11,1 mm + EPS 46 mm + OSB 11,1 mm)</option>
-                  <option value="SIP72mm">SIP 72 mm (OSB 11,1 mm + EPS 50 mm + OSB 11,1 mm)</option>
-              
-                  <!-- Paneles estándar muros -->
-                  <option value="SIP87mm">SIP 87 mm (OSB 11,1 mm + EPS 65 mm + OSB 11,1 mm)</option>
-                  <option value="SIP92mm">SIP 92 mm (OSB 11,1 mm + EPS 70 mm + OSB 11,1 mm)</option>
-                  <option value="SIP100mm">SIP 100 mm (OSB 11,1 mm + EPS 78 mm + OSB 11,1 mm)</option>
-                  <option value="SIP108mm">SIP 108 mm (OSB 11,1 mm + EPS 86 mm + OSB 11,1 mm)</option>
-                  <option value="SIP111mm">SIP 111 mm (OSB 11,1 mm + EPS 89 mm + OSB 11,1 mm)</option>
-                  <option value="SIP114mm">SIP 114 mm (OSB 11,1 mm + EPS 92 mm + OSB 11,1 mm)</option>
-              
-                  <!-- Paneles reforzados/exteriores -->
-                  <option value="SIP116mm">SIP 116 mm (OSB 11,1 mm + EPS 94 mm + OSB 11,1 mm)</option>
-                  <option value="SIP124mm">SIP 124 mm (OSB 11,1 mm + EPS 102 mm + OSB 11,1 mm)</option>
-                  <option value="SIP140mm">SIP 140 mm (OSB 11,1 mm + EPS 118 mm + OSB 11,1 mm)</option>
-                  <option value="SIP160mm">SIP 160 mm (OSB 11,1 mm + EPS 138 mm + OSB 11,1 mm)</option>
-                  <option value="SIP162mm">SIP 162 mm (OSB 11,1 mm + EPS 140 mm + OSB 11,1 mm)</option>
-              
-                  <option value="otros">Otros</option>
-                </select>
+                <div class="control-inline">
+                  <select id="tipo-sip" required>
+                    <option value="">Selecciona…</option>
+                    <option value="SIP63mm">SIP 63 mm (OSB 11,1 mm + EPS 40 mm + OSB 11,1 mm)</option>
+                    <option value="SIP69mm">SIP 69 mm (OSB 11,1 mm + EPS 46 mm + OSB 11,1 mm)</option>
+                    <option value="SIP72mm">SIP 72 mm (OSB 11,1 mm + EPS 50 mm + OSB 11,1 mm)</option>
+                
+                    <!-- Paneles estándar muros -->
+                    <option value="SIP87mm">SIP 87 mm (OSB 11,1 mm + EPS 65 mm + OSB 11,1 mm)</option>
+                    <option value="SIP92mm">SIP 92 mm (OSB 11,1 mm + EPS 70 mm + OSB 11,1 mm)</option>
+                    <option value="SIP100mm">SIP 100 mm (OSB 11,1 mm + EPS 78 mm + OSB 11,1 mm)</option>
+                    <option value="SIP108mm">SIP 108 mm (OSB 11,1 mm + EPS 86 mm + OSB 11,1 mm)</option>
+                    <option value="SIP111mm">SIP 111 mm (OSB 11,1 mm + EPS 89 mm + OSB 11,1 mm)</option>
+                    <option value="SIP114mm">SIP 114 mm (OSB 11,1 mm + EPS 92 mm + OSB 11,1 mm)</option>
+                
+                    <!-- Paneles reforzados/exteriores -->
+                    <option value="SIP116mm">SIP 116 mm (OSB 11,1 mm + EPS 94 mm + OSB 11,1 mm)</option>
+                    <option value="SIP124mm">SIP 124 mm (OSB 11,1 mm + EPS 102 mm + OSB 11,1 mm)</option>
+                    <option value="SIP140mm">SIP 140 mm (OSB 11,1 mm + EPS 118 mm + OSB 11,1 mm)</option>
+                    <option value="SIP160mm">SIP 160 mm (OSB 11,1 mm + EPS 138 mm + OSB 11,1 mm)</option>
+                    <option value="SIP162mm">SIP 162 mm (OSB 11,1 mm + EPS 140 mm + OSB 11,1 mm)</option>
+                
+                    <option value="otros">Otros</option>
+                  </select>
+                  <button id="help-sip" class="help-btn" type="button" aria-label="Ayuda panel sip">?</button>
+                </div>
               </div>
               <!-- Tipo de Muro -->
               <div class="field" id="wrap-muro" style="display:none;">
                 <label class="label">Tipo de muro</label>
-                <select id="tipo-muro" required>
-                  <option value="">Selecciona…</option>
-                  <option value="bloque">Bloque de hormigón</option>
-                  <option value="ladrillo">Ladrillo</option>
-                  <option value="hormarmado">Hormigón armado</option>
-                  <option value="otros">Otros</option>
-                </select>
+                <div class="control-inline">
+                  <select id="tipo-muro" required>
+                    <option value="">Selecciona…</option>
+                    <option value="bloque">Bloque de hormigón</option>
+                    <option value="ladrillo">Ladrillo</option>
+                    <option value="hormarmado">Hormigón armado</option>
+                    <option value="otros">Otros</option>
+                  </select>
+                  <button id="help-muro" class="help-btn" type="button" aria-label="Ayuda muro">?</button>
+                </div>
               </div>
               <!-- Tipo de Ladrillo -->
               <div class="field" id="wrap-ladrillo" style="display:none;">
                 <label class="label">Tipo de ladrillo</label>
-                <select id="tipo-ladrillo" required>
-                  <option value="">Selecciona…</option>
-                  <option value="Lfiscal">Ladrillo Fiscal</option>
-                  <option value="Lprincesa">Ladrillo Fiscal Princesa</option>
-                  <option value="otros">Otros</option>
-                </select>
+                <div class="control-inline">
+                  <select id="tipo-ladrillo" required>
+                    <option value="">Selecciona…</option>
+                    <option value="Lfiscal">Ladrillo Fiscal</option>
+                    <option value="Lprincesa">Ladrillo Fiscal Princesa</option>
+                    <option value="otros">Otros</option>
+                  </select>
+                  <button id="help-ladrillo" class="help-btn" type="button" aria-label="Ayuda ladrillo">?</button>
+                </div>
               </div>
 
 
@@ -957,6 +974,198 @@ select {
     </p>
   </div>
 </div>
+
+<div class="modal" id="modal-madera">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>¿Qué tipo de madera elegir?</h3>
+    <ul>
+      <li>
+        <strong>2x3 en pino normal:</strong><br>
+        Una solución básica para estructuras ligeras y provisionales. Cumple lo esencial, pero con menor durabilidad frente a la humedad y el paso del tiempo.  
+        <br><em>Uso típico: proyectos pequeños o de corta vida útil.</em>
+      </li>
+      <br>
+      <li>
+        <strong>2x4 en pino normal:</strong><br>
+        Más firme y versátil que la 2x3, ofrece mayor estabilidad estructural. Es la elección clásica en proyectos económicos, manteniendo un buen equilibrio entre costo y funcionalidad.  
+        <br><em>Uso típico: viviendas estándar y ampliaciones sencillas.</em>
+      </li>
+      <br>
+      <li>
+        <strong>2x3 en pino impregnado:</strong><br>
+        El tratamiento impregnante aumenta la resistencia contra plagas, hongos y humedad. Una alternativa confiable cuando se busca un plus de durabilidad sin elevar demasiado el costo.  
+        <br><em>Uso típico: construcciones expuestas a condiciones ambientales exigentes.</em>
+      </li>
+      <br>
+      <li>
+        <strong>2x4 en pino impregnado:</strong><br>
+        La opción más robusta y de mayor vida útil. Combina sección más amplia y protección extra, garantizando estabilidad y resistencia a largo plazo.  
+        <br><em>Uso típico: proyectos definitivos, de alto estándar o donde la seguridad estructural es prioritaria.</em>
+      </li>
+    </ul>
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
+      <strong>Recomendación:</strong> el pino normal resuelve necesidades básicas, pero para proteger tu inversión y asegurar la mejor durabilidad, 
+      <strong>el pino impregnado —en especial el 2x4— es la alternativa que entrega el valor más sólido y confiable a largo plazo.</strong>
+    </p>
+  </div>
+</div>
+
+<div class="modal" id="modal-vulcometal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>¿Qué tipo de Vulcometal elegir?</h3>
+    <ul>
+      <li>
+        <strong>C 60 x 38 x 0,50 mm – 3 m:</strong><br>
+        Perfil ligero, usado principalmente en tabiques interiores no estructurales.  
+        <br><em>Uso típico: divisiones simples, proyectos económicos.</em>
+      </li>
+      <br>
+      <li>
+        <strong>C 60 x 38 x 0,85 mm – 6 m:</strong><br>
+        Más firme que el de 0,50 mm, entrega mayor resistencia y estabilidad en tabiques y cielos.  
+        <br><em>Uso típico: viviendas estándar con mejor durabilidad.</em>
+      </li>
+      <br>
+      <li>
+        <strong>C 90 x 38 x 0,85 mm (2x4) – 6 m:</strong><br>
+        Equivalente a la sección clásica de madera 2x4, ideal para tabiquería estructural.  
+        <br><em>Uso típico: muros portantes y proyectos exigentes.</em>
+      </li>
+      <br>
+      <li>
+        <strong>C 100 x 40 x 0,85 mm – 6 m:</strong><br>
+        Perfil robusto, pensado para tabiquería de mayor altura o mayor exigencia estructural.  
+        <br><em>Uso típico: edificaciones con requerimientos superiores.</em>
+      </li>
+      <br>
+      <li>
+        <strong>C 150 x 40 x 0,85 mm – 6 m:</strong><br>
+        La opción más sólida dentro de los perfiles C. Proporciona máxima rigidez y capacidad de carga.  
+        <br><em>Uso típico: proyectos de alto estándar, muros portantes y construcciones de larga vida útil.</em>
+      </li>
+      <br>
+      <li>
+        <strong>Perfiles U (Canales de amarre):</strong><br>
+        Usados como guías inferiores y superiores en los tabiques. Se combinan con los perfiles C para completar la estructura.  
+        <br><em>Disponibles en varias dimensiones (U30, U42, U62, U92, U103, U153), según el tamaño y carga del proyecto.</em>
+      </li>
+    </ul>
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
+      <strong>Recomendación:</strong> los perfiles ligeros cumplen funciones básicas, pero si buscas estabilidad, seguridad y mayor valor en el tiempo, 
+      <strong>los perfiles C más robustos (90 mm en adelante) junto con sus canales U son la inversión más conveniente y profesional.</strong>
+    </p>
+  </div>
+</div>
+
+<div class="modal" id="modal-sip">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>¿Qué panel SIP elegir?</h3>
+
+    <ul>
+      <li>
+        <strong>SIP 63–72 mm (núcleo EPS 40–50 mm):</strong><br>
+        Solución ligera para divisiones interiores o climas benignos. Buen desempeño térmico básico y montaje rápido.  
+        <br><em>Uso típico: tabiques interiores y anexos de baja exigencia.</em>
+      </li>
+      <br>
+
+      <li>
+        <strong>SIP 87–114 mm (núcleo EPS 65–92 mm):</strong><br>
+        Estándar residencial: mayor aislación, rigidez y confort acústico. Reduce puentes térmicos y mejora el desempeño global de la vivienda.  
+        <br><em>Uso típico: muros perimetrales en vivienda, equilibrio costo/beneficio.</em>
+      </li>
+      <br>
+
+      <li>
+        <strong>SIP 116–140 mm (núcleo EPS 94–118 mm):</strong><br>
+        Nivel superior de eficiencia energética. Ideal para zonas frías o proyectos con foco en ahorro y confort estable todo el año.  
+        <br><em>Uso típico: viviendas de alto estándar y ampliaciones definitivas.</em>
+      </li>
+      <br>
+
+      <li>
+        <strong>SIP 160–162 mm (núcleo EPS 138–140 mm):</strong><br>
+        Máxima aislación y rigidez para un desempeño premium: menos pérdidas térmicas, mejor confort acústico y estructura muy estable.  
+        <br><em>Uso típico: proyectos exigentes, eficiencia energética avanzada y valor a largo plazo.</em>
+      </li>
+    </ul>
+
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
+      <strong>Recomendación:</strong> para vivienda, el rango <strong>87–114 mm</strong> entrega un excelente equilibrio. 
+      Si buscas eficiencia energética, confort superior y valor de reventa, <strong>124–162 mm</strong> es la inversión más conveniente y profesional.
+    </p>
+  </div>
+</div>
+
+<div class="modal" id="modal-muro">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>¿Qué tipo de muro elegir?</h3>
+
+    <ul>
+      <li>
+        <strong>Bloque de hormigón:</strong><br>
+        Alternativa práctica y económica. Ofrece buena resistencia y rapidez de ejecución, con un desempeño correcto en muros divisorios y cierres simples.  
+        <br><em>Uso típico: obras estándar o muros perimetrales en proyectos de menor exigencia.</em>
+      </li>
+      <br>
+
+      <li>
+        <strong>Ladrillo:</strong><br>
+        Una solución clásica y confiable. Aporta masa térmica, buen aislamiento acústico y estética tradicional. Su durabilidad lo mantiene vigente a lo largo del tiempo.  
+        <br><em>Uso típico: viviendas familiares y proyectos donde se busca mayor confort y solidez.</em>
+      </li>
+      <br>
+
+      <li>
+        <strong>Hormigón armado:</strong><br>
+        La opción más robusta y duradera. Garantiza máxima estabilidad estructural, resistencia a sismos y seguridad superior.  
+        <br><em>Uso típico: proyectos de alto estándar, edificaciones definitivas y obras donde se prioriza la inversión a largo plazo.</em>
+      </li>
+    </ul>
+
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
+      <strong>Recomendación:</strong> tanto el bloque como el ladrillo cumplen en contextos básicos, 
+      pero si lo que buscas es <strong>seguridad, estabilidad y valor a futuro</strong>, 
+      <strong>el hormigón armado</strong> es sin duda la elección más conveniente y profesional.
+    </p>
+  </div>
+</div>
+
+<div class="modal" id="modal-ladrillo">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>¿Qué tipo de ladrillo elegir?</h3>
+
+    <ul>
+      <li>
+        <strong>Ladrillo Fiscal:</strong><br>
+        El clásico de la construcción. Resistente, durable y con buen comportamiento térmico.  
+        Permite levantar muros firmes y confiables a un costo accesible.  
+        <br><em>Uso típico: viviendas estándar y proyectos de construcción tradicional.</em>
+      </li>
+      <br>
+
+      <li>
+        <strong>Ladrillo Fiscal Princesa:</strong><br>
+        La versión refinada del ladrillo fiscal. Ofrece mejor terminación estética, mayor precisión en sus medidas y un aspecto más elegante para muros a la vista.  
+        <br><em>Uso típico: proyectos residenciales de mayor estándar, ampliaciones y obras donde la estética también importa.</em>
+      </li>
+    </ul>
+
+    <p style="margin-top:1rem; font-size:0.9rem; color:#555; line-height:1.5;">
+      <strong>Recomendación:</strong> el ladrillo fiscal cumple perfectamente en proyectos básicos,  
+      pero si lo que buscas es <strong>una construcción con mejor presentación, durabilidad y valor a largo plazo</strong>, 
+      <strong>el ladrillo Fiscal Princesa</strong> es la opción más recomendable.
+    </p>
+  </div>
+</div>
+
+
+
 </section>
 
 
@@ -1044,6 +1253,11 @@ document.addEventListener('DOMContentLoaded', () => {
   wireHelp('tipo-dosificacion',   'help-dosi',     'modal-dosificacion');
   wireHelp('tipo-emplazamiento',  'help-empla',    'modal-empla');
   wireHelp('tipo-elevacion',  'help-elevacion',    'modal-elevacion');
+  wireHelp('tipo-madera',  'help-madera',    'modal-madera');
+  wireHelp('tipo-vulco',  'help-vulcometal',    'modal-vulcometal');
+  wireHelp('tipo-sip',  'help-sip',    'modal-sip');
+  wireHelp('tipo-muro',  'help-muro',    'modal-muro');
+  wireHelp('tipo-ladrillo',  'help-ladrillo',    'modal-ladrillo');
 });
 
 
@@ -1246,39 +1460,6 @@ selMuro.addEventListener("change", function () {
 
 // estado inicial (por si hay valores precargados)
 tipoElevacion.dispatchEvent(new Event("change"));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </script>

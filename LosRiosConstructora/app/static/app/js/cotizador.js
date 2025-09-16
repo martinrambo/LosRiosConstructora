@@ -60,6 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
   wireHelp('tipo-dosificacion',   'help-dosi',     'modal-dosificacion');
   wireHelp('tipo-emplazamiento',  'help-empla',    'modal-empla');
   wireHelp('tipo-elevacion',  'help-elevacion',    'modal-elevacion');
+  wireHelp('tipo-madera',  'help-madera',    'modal-madera');
+  wireHelp('tipo-vulco',  'help-vulcometal',    'modal-vulcometal');
+  wireHelp('tipo-sip',  'help-sip',    'modal-sip');
+  wireHelp('tipo-muro',  'help-muro',    'modal-muro');
+  wireHelp('tipo-ladrillo',  'help-ladrillo',    'modal-ladrillo');
 });
 
 
